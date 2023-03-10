@@ -1,0 +1,15 @@
+<RCC>
+    <qresource prefix="/img">
+        <file>backg.jpg</file>
+        <file>333650138_1407283670085581_4559768689364842168_n.jpg</file>
+        <file>rsz_333650138_1407283670085581_4559768689364842168_n.jpg</file>
+        <file>269692057_1624625321227485_6672185886649751140_n.jpg</file>
+        <file>333535462_722083709369591_6432692376230598368_n.png</file>
+        <file>white.jpg</file>
+        <file>login 2.jpg</file>
+        <file>login3.png</file>
+        <file>rsz_backg_login.jpg</file>
+        <file>logingr.png</file>
+        <file>rsz back2.jpg</file>
+    </qresource>
+</RCC>
