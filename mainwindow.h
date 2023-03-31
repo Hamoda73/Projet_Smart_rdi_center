@@ -1,21 +1,43 @@
-#ifndef MAINWINDOW_H
+/*
+ * #ifndef MAINWINDOW_H
 #define MAINWINDOW_H
 
 #include <QMainWindow>
+#include <QWidget>
+#include "equipement.h"
+#include <QStandardItemModel>
+#include <QMainWindow>
+#include <qmainwindow.h>
 
-QT_BEGIN_NAMESPACE
-namespace Ui { class MainWindow; }
-QT_END_NAMESPACE
+namespace Ui {
+class MainWindow;
+}
 
 class MainWindow : public QMainWindow
 {
     Q_OBJECT
 
 public:
-    MainWindow(QWidget *parent = nullptr);
+    explicit MainWindow(QWidget *parent = nullptr);
     ~MainWindow();
+    */
+    /*void setModel(QAbstractItemModel *model); */
+/*
+private slots:
+    void on_procceed_add_clicked();
+
+    void on_Delete_clicked();
+
+    void on_pushButton_17_clicked();
 
 private:
     Ui::MainWindow *ui;
+    Equipement Eqmp;
+
+
 };
+
+
 #endif // MAINWINDOW_H
+
+*/
