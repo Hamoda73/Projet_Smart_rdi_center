@@ -248,13 +248,6 @@ void Equipement::getInventoryStats()
     int itemCount = query.value(0).toInt();
 
     // Get the most popular items
-    query.exec("SELECT nom, COUNT(*) as count FROM equipement GROUP BY nom ORDER BY count DESC LIMIT 10");
-    QStringList popularItems;
-    while (query.next()) {
-        QString itemName = query.value(0).toString();
-        int itemCount = query.value(1).toInt();
-        popularItems << QString("%1 (%2)").arg(itemName).arg(itemCount);
-    }
 
     // Get the total value of the inventory
     query.exec("SELECT SUM(prix_achat) FROM equipement");
@@ -264,9 +257,9 @@ void Equipement::getInventoryStats()
 
     // Display the statistics in a QMessageBox
     QMessageBox msgBox;
-    msgBox.setText(QString("Total number of items: %1\nMost popular items:\n%2\nTotal inventory value: %3")
+    msgBox.setText(QString("Total number of items: %1\n Total inventory value: %2")
                    .arg(itemCount)
-                   .arg(popularItems.join("\n"))
+
                    .arg(totalValue));
     msgBox.exec();
 }

@@ -215,7 +215,7 @@ void materiel::on_sendemail_clicked()
         EmailSender emailSender;
 
         QString user = "mohamedprojectqt@gmail.com";
-        QString password = "lyxykrunqhrpfjux";
+        QString password = "evgykvedrgaxbakc";
         QString from = "mohamedprojectqt@gmail.com";
         QString to = ui->to_edit->text();
         QString subject = ui->subject_edit->text();
