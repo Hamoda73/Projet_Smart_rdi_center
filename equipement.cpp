@@ -2,6 +2,11 @@
 #include <QSqlQuery>
 #include <QtDebug>
 #include <QObject>
+#include <qsqlerror>
+
+#include "ui_materiel.h"
+
+
 
 Equipement::Equipement()
 {
@@ -29,23 +34,49 @@ void Equipement :: setetat(QString etat){this->etat=etat;}
 
 bool Equipement::ajouter()
 {
-
     QSqlQuery query;
     QString res = QString::number(id);
 
-    query.prepare("insert into equipement (id,nombre,Qr_code,prix_achat,nom,etat,notes)" "values(:id,:nombre,:Qr_code,:prix_achat,:nom,:etat,:notes)");
+    // Check if there is already an existing record with the same name
+    query.prepare("SELECT COUNT(*) FROM equipement WHERE nom = :nom");
+    query.bindValue(":nom", nom);
+    if (!query.exec()) {
+        qDebug() << "Error counting equipements with same name: " << query.lastError().text();
+        return false;
+    }
+    int count = 0;
+    if (query.next()) {
+        count = query.value(0).toInt();
+    }
 
-    query.bindValue(":id",res);
-    query.bindValue(":nombre",nombre);
-    query.bindValue(":Qr_code",Qr_code);
-    query.bindValue(":prix_achat",prix_achat);
-    query.bindValue(":nom",nom);
-    query.bindValue(":etat",etat);
-    query.bindValue(":notes",notes);
+    // Insert the new record
+    query.prepare("INSERT INTO equipement (id, nombre, Qr_code, prix_achat, nom, etat, notes) VALUES (:id, :nombre, :Qr_code, :prix_achat, :nom, :etat, :notes)");
+    query.bindValue(":id", res);
+    query.bindValue(":nombre", count + 1); // Increment count by 1 and use it as the new value for nombre
+    query.bindValue(":Qr_code", Qr_code);
+    query.bindValue(":prix_achat", prix_achat);
+    query.bindValue(":nom", nom);
+    query.bindValue(":etat", etat);
+    query.bindValue(":notes", notes);
+    if (!query.exec()) {
+        qDebug() << "Error inserting new equipement: " << query.lastError().text();
+        return false;
+    }
 
-    return query.exec();
+    // Update the nombre variable in all existing records with the same name
+    query.prepare("UPDATE equipement SET nombre = :nombre WHERE nom = :nom");
+    query.bindValue(":nombre", count + 1);
+    query.bindValue(":nom", nom);
+    if (!query.exec()) {
+        qDebug() << "Error updating equipements with same name: " << query.lastError().text();
+        return false;
+    }
 
+    return true;
 }
+
+
+
 
 
 bool Equipement::modifier()
@@ -122,11 +153,36 @@ bool Equipement::modifier()
 
 bool Equipement::supprimer(int id)
 {
-    QSqlQuery query;
-    QString res=QString::number(id);
-    query.prepare("Delete from equipement where ID= :id");
-    query.bindValue(":id",res);
-    return query.exec();
+    // First, retrieve the name of the equipement that is being deleted
+        QSqlQuery queryGetNom;
+        queryGetNom.prepare("SELECT nom FROM equipement WHERE ID=:id");
+        queryGetNom.bindValue(":id", id);
+        if (!queryGetNom.exec() || !queryGetNom.next()) {
+            qDebug() << "Error retrieving nom of equipement to delete:" << queryGetNom.lastError().text();
+            return false;
+        }
+        QString nomToDelete = queryGetNom.value(0).toString();
+
+        // Delete the equipement
+        QSqlQuery queryDelete;
+        queryDelete.prepare("DELETE FROM equipement WHERE ID=:id");
+        queryDelete.bindValue(":id", id);
+        if (!queryDelete.exec()) {
+            qDebug() << "Error deleting equipement:" << queryDelete.lastError().text();
+            return false;
+        }
+
+        // Decrement the nombre variable of all other equipements with the same name
+        QSqlQuery queryDecrement;
+        queryDecrement.prepare("UPDATE equipement SET nombre=nombre-1 WHERE nom=:nom AND ID!=:id");
+        queryDecrement.bindValue(":nom", nomToDelete);
+        queryDecrement.bindValue(":id", id);
+        if (!queryDecrement.exec()) {
+            qDebug() << "Error decrementing nombre variable:" << queryDecrement.lastError().text();
+            return false;
+        }
+
+        return true;
 }
 
 QSqlQueryModel * Equipement::afficher()
@@ -217,49 +273,99 @@ QSqlQueryModel * Equipement::affichertrinombre()
 }
 
 
-/*
-void Equipement::generateQRCode() {
-    std::string nomStr = nom.toStdString();
-    std::string notesStr = notes.toStdString();
-    std::string etatStr = etat.toStdString();
 
-    std::string text = "Name: " + nomStr + "\nSerial Number: " + notesStr + "\nManufacturer: " + etatStr;
 
-    qrcodegen::QrCode qr = qrcodegen::QrCode::encodeText(text.c_str(), qrcodegen::QrCode::Ecc::LOW);
 
-    const int size = qr.getSize();
-    for (int y = 0; y < size; y++) {
-        for (int x = 0; x < size; x++) {
-            std::cout << (qr.getModule(x, y) ? "##" : "  ");
-        }
-        std::cout << std::endl;
-    }
-}
-*/
+
 
 
 void Equipement::getInventoryStats()
+{/*
+    QPieSeries *series = new QPieSeries();
+    series->append("Equipment 1", 10);
+    series->append("Equipment 2", 20);
+    series->append("Equipment 3", 5);
+
+    // Create a chart view and set the series
+    QPieSlice *slice = series->slices().at(1);
+    slice->setExploded(true);
+    slice->setLabelVisible(true);
+
+    QPieChart *chart = new QPieChart();
+    chart->addSeries(series);
+    chart->setTitle("Available Equipments");
+
+    // Create a chart view and set the chart
+    QChartView *chartView = new QChartView(chart);
+    chartView->setRenderHint(QPainter::Antialiasing);
+
+    // Set the chart view as the main window
+    QMainWindow window;
+    window.setCentralWidget(chartView);
+    window.resize(400, 300);
+    window.show();
+    */
+}
+
+void Equipement::displayInventoryPieChart()
 {
-    QSqlQuery query;
+    // Create a QMap to store the unique names and their corresponding nombres
+        QMap<QString, int> stats;
 
-    // Get the total number of items in the inventory
-    query.exec("SELECT COUNT(*) FROM equipement");
-    query.next();
-    int itemCount = query.value(0).toInt();
+        // Get all the equipements in the inventory
+        QSqlQuery query;
+        query.prepare("SELECT nom, nombre FROM equipement");
+        query.exec();
 
-    // Get the most popular items
+        // Iterate through the results and add up the nombres for each unique name
+        while(query.next()) {
+            QString nom = query.value(0).toString();
+            int nombre = query.value(1).toInt();
+            if(stats.contains(nom)) {
+                if (stats[nom] != nombre) {
+                    // If the name already exists in the map and the nombre is different, divide the nombre by 2
+                    nombre = nombre / 2;
+                } else {
+                    // If the name already exists in the map and the nombre is the same, skip it
+                    continue;
+                }
+            }
+            stats[nom] = nombre;
+        }
 
-    // Get the total value of the inventory
-    query.exec("SELECT SUM(prix_achat) FROM equipement");
+        // Create the pie chart series and add the data from the QMap
+        QPieSeries *series = new QPieSeries();
+        QMapIterator<QString, int> i(stats);
+        while (i.hasNext()) {
+            i.next();
+            series->append(i.key(), i.value());
+        }
 
-    query.next();
-    double totalValue = query.value(0).toDouble();
+        // Create the chart and chart view, and display the chart view
+        QChart *chart = new QChart();
+        chart->addSeries(series);
+        chart->setTitle("Equipement Inventory Stats");
+        QChartView *chartView = new QChartView(chart);
+        chartView->setRenderHint(QPainter::Antialiasing);
+        chartView->resize(800, 600);
+        chartView->show();
+}
+////int id, QString refference, QString nomequip, QString etatequip, QString dateajout, int nombredepanne, int garantie
+void Equipement::generateQRCode(QString id) {
 
-    // Display the statistics in a QMessageBox
-    QMessageBox msgBox;
-    msgBox.setText(QString("Total number of items: %1\n Total inventory value: %2")
-                   .arg(itemCount)
+    /*QString data = "text to be encoded";
+        QImage barcode = QZXing::encodeData(data);*/
 
-                   .arg(totalValue));
-    msgBox.exec();
+    QString data = id;
+        QImage qrCodeImage = QZXing::encodeData(data.toUtf8(), QZXing::EncoderFormat_QR_CODE, QSize(200, 200));
+        QPixmap qrCodePixmap = QPixmap::fromImage(qrCodeImage);
+
+        // Save the QR code image as a file
+        QString fileName = "qrcodeadouma1.png";
+        if(qrCodePixmap.save(fileName)) {
+            qDebug() << "QR code image saved as file: " << fileName;
+        } else {
+            qDebug() << "Failed to save QR code image as file: " << fileName;
+        }
+
 }

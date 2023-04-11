@@ -235,11 +235,11 @@ void materiel::on_to_editingFinished()
 void materiel::on_generate_clicked_clicked()
 {
 
-/*
-    QString text = ui->le_id->text();
-    QImage qrImage = QZXing::encodeData(text);
-    ui->qrCodeLabel->setPixmap(QPixmap::fromImage(qrImage));
-*/
+    QString aux = ui->id_gen_edit->text();
+      Eqmp.generateQRCode(aux);
+
+   // Eqmp.generateQRCode();
+
 }
 
 
@@ -362,7 +362,8 @@ void materiel::on_comboBox_activated(int index)
 
 void materiel::on_pushButton_16_clicked()
 {
-    Eqmp.getInventoryStats();
+
+Eqmp.displayInventoryPieChart();
 
 }
 

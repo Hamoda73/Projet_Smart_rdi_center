@@ -2,6 +2,8 @@
 #define EQUIPEMENT_H
 #include <QMessageBox>
 
+
+
 #include <QString>
 #include <QSqlQuery>
 #include <QSqlQueryModel>
@@ -12,6 +14,29 @@
 #include <QTextStream>
 #include <QByteArray>
 
+
+#include <QtCharts>
+#include <QChartView>
+#include <QPieSeries>
+
+#include <string>
+
+
+
+#include <fstream>
+
+#include <vector>
+
+
+#include <QImage>
+#include <QPixmap>
+
+#include "QZXing.h"
+
+
+#include "qrcodegen.hpp"
+
+#include <fstream>
 
 using namespace std ;
 
@@ -49,8 +74,12 @@ public:
     QSqlQueryModel * affichertriprix();
     QSqlQueryModel * affichertriid();
     QSqlQueryModel * affichertrinombre();
+    void generateQRCode(QString id);
     void getInventoryStats();
-    void generateQRCode();
+
+
+    void displayInventoryPieChart();
+
 
 
 
@@ -61,6 +90,7 @@ public:
 private:
     int id,nombre,prix_achat;
     QString nom,Qr_code,etat,notes;
+
 };
 
 #endif // EQUIPEMENT_H

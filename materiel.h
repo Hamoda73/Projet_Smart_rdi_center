@@ -9,6 +9,13 @@
 #include <QSortFilterProxyModel>
 #include <QCompleter>
 
+#include <QtCharts>
+#include <QChartView>
+#include <QPieSeries>
+
+
+#include "qrcodegen.hpp"
+
 namespace Ui {
 class materiel;
 }
