@@ -350,22 +350,28 @@ void Equipement::displayInventoryPieChart()
         chartView->resize(800, 600);
         chartView->show();
 }
+
+
+
+
 ////int id, QString refference, QString nomequip, QString etatequip, QString dateajout, int nombredepanne, int garantie
 void Equipement::generateQRCode(QString id) {
 
-    /*QString data = "text to be encoded";
-        QImage barcode = QZXing::encodeData(data);*/
-
-    QString data = id;
+        QString data = id;
         QImage qrCodeImage = QZXing::encodeData(data.toUtf8(), QZXing::EncoderFormat_QR_CODE, QSize(200, 200));
         QPixmap qrCodePixmap = QPixmap::fromImage(qrCodeImage);
+        // we convert it to a qpixmap cuz we cant display a qimage in a qlabel widget
+        // Create a new dialog window to display the QR code image
+        QDialog *qrCodeDialog = new QDialog();
+        // Layout puts the image in the middle of the qlabel
+        QVBoxLayout *layout = new QVBoxLayout(qrCodeDialog);
+        QLabel *qrCodeLabel = new QLabel(qrCodeDialog);
 
-        // Save the QR code image as a file
-        QString fileName = "qrcodeadouma1.png";
-        if(qrCodePixmap.save(fileName)) {
-            qDebug() << "QR code image saved as file: " << fileName;
-        } else {
-            qDebug() << "Failed to save QR code image as file: " << fileName;
-        }
+        // the qlabel to show the qpixmap
+        qrCodeLabel->setPixmap(qrCodePixmap);
+        layout->addWidget(qrCodeLabel);
+        qrCodeDialog->setLayout(layout);
 
+        // Show the dialog window (execute it)
+        qrCodeDialog->exec();
 }

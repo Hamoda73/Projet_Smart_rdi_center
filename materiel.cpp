@@ -187,6 +187,7 @@ void materiel::on_tableView_2_clicked(const QModelIndex &index)
 
 
              ui->le_ids->setText(QString::number(id));
+             ui->id_gen_edit->setText(QString::number(id));
              ui->le_nom_2->setText(nom);
              ui->le_prix_2->setText(prix_achat);
              ui->le_etat_2->setText(etat);
@@ -215,7 +216,7 @@ void materiel::on_sendemail_clicked()
         EmailSender emailSender;
 
         QString user = "mohamedprojectqt@gmail.com";
-        QString password = "evgykvedrgaxbakc";
+        QString password = "bhynnrprgfifddlf";
         QString from = "mohamedprojectqt@gmail.com";
         QString to = ui->to_edit->text();
         QString subject = ui->subject_edit->text();
@@ -248,23 +249,23 @@ void materiel::on_extract_pdf_clicked()
     // Get the database connection
     QSqlDatabase db = QSqlDatabase::database();
 
-    // Create a QPrinter object and set its properties
+    // Create a QPrinter object and set its properties( of the printer)
     QPrinter printer(QPrinter::PrinterResolution);
     printer.setOutputFormat(QPrinter::PdfFormat);
     printer.setPageSize(QPageSize(QPageSize::A4));
-    printer.setOutputFileName("equipement.pdf");
+    printer.setOutputFileName("equipement1.pdf");
 
-    // Create a QPainter object and set its properties
+    // Create a QPainter ( drawing ) object and set its properties
     QPainter painter(&printer);
     painter.setRenderHint(QPainter::Antialiasing);
     painter.setRenderHint(QPainter::TextAntialiasing);
 
-    // Create a QSqlQuery object and execute the query
+    // Create a QSqlQuery object and execute the query to retrieve data from db
     QSqlQuery query("SELECT * FROM equipement", db);
 
-    // Create a QTextDocument object and set its properties
+    // Create a QTextDocument object and set its properties ( stores the html data )
     QTextDocument doc;
-    doc.setPageSize(QPageSize(QPageSize::A4).size(QPageSize::Point));
+    doc.setPageSize(QPageSize(QPageSize::A4).size(QPageSize::Point)); // point, return the size in points
     QString styleSheet = "table { width: 100%; border-collapse: collapse; border-spacing: 0; }"
                          "table thead { background-color: #e5e5e5; }"
                          "table thead th { padding: 8px; border-bottom: 2px solid #bfbfbf; text-align: left; font-weight: 600; }"
@@ -272,7 +273,7 @@ void materiel::on_extract_pdf_clicked()
                          "table tbody td { padding: 8px; border-bottom: 1px solid #bfbfbf; }";
     doc.setDefaultStyleSheet(styleSheet);
 
-    // Populate the QTextDocument with data from the QSqlQuery
+    // Populate the QTextDocument with data from the QSqlQuery in the QTextDocument
     QString html = "<table><thead><tr><th>id</th><th>nombre</th><th>Qr_code</th><th>prix_achat</th><th>nom</th><th>etat</th><th>notes</th></tr></thead><tbody>";
     while (query.next()) {
         QString id = query.value(0).toString();
@@ -287,8 +288,18 @@ void materiel::on_extract_pdf_clicked()
     html += "</tbody></table>";
     doc.setHtml(html);
 
-    // Draw the QTextDocument to the QPainter
+    // Draw the QTextDocument to the QPainter from the doc variable
     doc.drawContents(&painter);
+
+    // Add a watermark to each page of the PDF
+        painter.save();
+        painter.setOpacity(0.2); // Set the opacity of the watermark
+        QFont font = painter.font();
+        font.setPointSize(72); // size of the watermark text
+        font.setBold(true); // font weight of the watermark text
+        painter.setFont(font);
+        painter.drawText(QRect(0, 0, printer.width(), printer.height()), Qt::AlignCenter, "SmartLAB"); // Draw the watermark text
+        painter.restore();
 
     // Cleanup
     painter.end();
@@ -313,15 +324,15 @@ void materiel::on_pb_recherche_clicked()
 void materiel::on_searchbox_textChanged(const QString &arg1)
 {
 
-    // Create a QSqlQuery to retrieve all equipment names that match the search query
+    // Created an QSqlQuery to retrieve all equipment names that match the search query
         QSqlQuery query;
         query.prepare("SELECT nom FROM equipement WHERE nom LIKE '%" + searchQuery + "%'");
         query.exec();
 
-        // Create a QStringList to hold the search suggestions
+     // Created an QStringList to hold the search suggestions
         QStringList suggestions;
 
-        // Add all matching equipment names to the suggestion list
+       // Add all matching equipment names to the suggestion list
         while (query.next()) {
             suggestions.append(query.value(0).toString());
         }
@@ -340,22 +351,25 @@ void materiel::on_comboBox_activated(int index)
 {
     if (index ==0)
     {
-    ui->tableView_2->setModel(Eqmp.afficherasc());
+         ui->tableView_2->setModel(Eqmp.afficherasc());
 
     }
+
     if (index ==1)
     {
-    ui->tableView_2->setModel(Eqmp.affichertriprix());
+         ui->tableView_2->setModel(Eqmp.affichertriprix());
 
     }
+
     if (index ==2)
     {
-    ui->tableView_2->setModel(Eqmp.affichertriid());
+         ui->tableView_2->setModel(Eqmp.affichertriid());
 
     }
+
     if (index ==3)
     {
-    ui->tableView_2->setModel(Eqmp.affichertrinombre());
+         ui->tableView_2->setModel(Eqmp.affichertrinombre());
 
     }
 }

@@ -11,6 +11,7 @@
 class EmailSender : public QObject
 {
     Q_OBJECT
+
 public:
     explicit EmailSender(QObject *parent = nullptr);
 
@@ -21,7 +22,7 @@ public:
 private:
     void sendCommand(QSslSocket *socket, const QString &command);
     void handleSslErrors(const QList<QSslError> &errors);
-
+    // theyre private cuz they are not meant to be called directly by other parts of the program
     QSslSocket *socket;
 };
 
