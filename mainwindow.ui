@@ -20,7 +20,7 @@
    <widget class="QTabWidget" name="tabWidget">
     <property name="geometry">
      <rect>
-      <x>10</x>
+      <x>0</x>
       <y>0</y>
       <width>1292</width>
       <height>731</height>
@@ -33,124 +33,48 @@
      </size>
     </property>
     <property name="styleSheet">
-     <string notr="true">background-color: rgb(0, 85, 0);</string>
+     <string notr="true">background-color: rgb(0, 85, 0);
+</string>
     </property>
     <property name="currentIndex">
-     <number>0</number>
+     <number>4</number>
     </property>
     <property name="usesScrollButtons">
      <bool>true</bool>
     </property>
     <widget class="QWidget" name="tab2">
      <attribute name="title">
-      <string>Home</string>
+      <string>Accueil</string>
      </attribute>
-     <widget class="QComboBox" name="comboBox">
+     <widget class="QGroupBox" name="groupBox_5">
       <property name="geometry">
        <rect>
-        <x>740</x>
-        <y>650</y>
-        <width>151</width>
-        <height>31</height>
+        <x>10</x>
+        <y>150</y>
+        <width>241</width>
+        <height>531</height>
        </rect>
       </property>
       <property name="styleSheet">
-       <string notr="true">background-image:url(c:/Users/Mahmoud/Desktop/background.png);
-color: rgb(0, 0, 0);
-border:1px solid #234F1E;
-border:none;
-</string>
+       <string notr="true">background:transparent;</string>
       </property>
-      <item>
-       <property name="text">
-        <string>Commercial name</string>
-       </property>
-      </item>
-      <item>
-       <property name="text">
-        <string>DCI name</string>
-       </property>
-      </item>
-      <item>
-       <property name="text">
-        <string>Dosage</string>
-       </property>
-      </item>
-      <item>
-       <property name="text">
-        <string>Date</string>
-       </property>
-      </item>
-     </widget>
-     <widget class="QPushButton" name="pushButton_9">
-      <property name="geometry">
-       <rect>
-        <x>590</x>
-        <y>650</y>
-        <width>111</width>
-        <height>31</height>
-       </rect>
+      <property name="title">
+       <string>Gestions</string>
       </property>
-      <property name="styleSheet">
-       <string notr="true">QPushButton
-{
-color:rgb(0,0,0);
-background-image:url(c:/Users/Mahmoud/Desktop/background.png);
-border-radius:10px;
-font-size:16px;
-}
-QPushButton:hover
-{
-color:rgb(255,255,255);
-background-image:url(c:/Users/Mahmoud/Desktop/background2.png);
-border-radius:10px;
-background:#3CB043;
-}</string>
-      </property>
-      <property name="text">
-       <string>Sort by</string>
-      </property>
-     </widget>
-     <widget class="QScrollArea" name="scrollArea_3">
-      <property name="geometry">
-       <rect>
-        <x>220</x>
-        <y>220</y>
-        <width>871</width>
-        <height>411</height>
-       </rect>
-      </property>
-      <property name="styleSheet">
-       <string notr="true">background-image:url(c:/Users/Mahmoud/Desktop/background2.png);
-border-radius:10px;
-background:#023020;</string>
-      </property>
-      <property name="widgetResizable">
-       <bool>true</bool>
-      </property>
-      <widget class="QWidget" name="scrollAreaWidgetContents_3">
+      <widget class="QPushButton" name="pushButton">
        <property name="geometry">
         <rect>
-         <x>0</x>
-         <y>0</y>
-         <width>871</width>
-         <height>411</height>
+         <x>30</x>
+         <y>40</y>
+         <width>181</width>
+         <height>51</height>
         </rect>
        </property>
-       <widget class="QPushButton" name="pushButton_15">
-        <property name="geometry">
-         <rect>
-          <x>720</x>
-          <y>40</y>
-          <width>111</width>
-          <height>31</height>
-         </rect>
-        </property>
-        <property name="styleSheet">
-         <string notr="true">QPushButton
+       <property name="styleSheet">
+        <string notr="true">QPushButton
 {
 color:rgb(0,0,0);
-background-image:url(c:/Users/Mahmoud/Desktop/background.png);
+background-image:url(c:/Users/Mahmoud/Desktop/ME/meds/images/background.png);
 border-radius:10px;
 font-size:16px;
 }
@@ -161,85 +85,206 @@ background-image:url(c:/Users/Mahmoud/Desktop/background2.png);
 border-radius:10px;
 background:#808080;
 }</string>
-        </property>
-        <property name="text">
-         <string>Search</string>
-        </property>
-        <property name="icon">
-         <iconset resource="reserouces.qrc">
-          <normaloff>:/icons/images/search.png</normaloff>:/icons/images/search.png</iconset>
-        </property>
-       </widget>
-       <widget class="QLineEdit" name="lineEdit_20">
-        <property name="geometry">
-         <rect>
-          <x>40</x>
-          <y>40</y>
-          <width>651</width>
-          <height>31</height>
-         </rect>
-        </property>
-        <property name="styleSheet">
-         <string notr="true">background-image:url(c:/Users/Mahmoud/Desktop/background.png);</string>
-        </property>
-        <property name="text">
-         <string/>
-        </property>
-       </widget>
-       <widget class="QTreeWidget" name="treeWidget_3">
-        <property name="geometry">
-         <rect>
-          <x>0</x>
-          <y>90</y>
-          <width>871</width>
-          <height>321</height>
-         </rect>
-        </property>
-        <property name="styleSheet">
-         <string notr="true">background-image:url(c:/Users/Mahmoud/Desktop/background.png);</string>
-        </property>
-        <column>
-         <property name="text">
-          <string>Commercial name</string>
-         </property>
-        </column>
-        <column>
-         <property name="text">
-          <string>DCI name</string>
-         </property>
-        </column>
-        <column>
-         <property name="text">
-          <string>Dosage</string>
-         </property>
-        </column>
-        <column>
-         <property name="text">
-          <string>Release date</string>
-         </property>
-        </column>
-        <column>
-         <property name="text">
-          <string>Expiration date</string>
-         </property>
-        </column>
-       </widget>
+       </property>
+       <property name="text">
+        <string>Medicament</string>
+       </property>
+      </widget>
+      <widget class="QPushButton" name="pushButton_2">
+       <property name="geometry">
+        <rect>
+         <x>30</x>
+         <y>120</y>
+         <width>181</width>
+         <height>51</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">QPushButton
+{
+color:rgb(0,0,0);
+background-image:url(c:/Users/Mahmoud/Desktop/ME/meds/images/background.png);
+border-radius:10px;
+font-size:16px;
+}
+QPushButton:hover
+{
+color:rgb(255,255,255);
+background-image:url(c:/Users/Mahmoud/Desktop/background2.png);
+border-radius:10px;
+background:#808080;
+}</string>
+       </property>
+       <property name="text">
+        <string>Equipement</string>
+       </property>
+      </widget>
+      <widget class="QPushButton" name="pushButton_3">
+       <property name="geometry">
+        <rect>
+         <x>30</x>
+         <y>200</y>
+         <width>181</width>
+         <height>51</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">QPushButton
+{
+color:rgb(0,0,0);
+background-image:url(c:/Users/Mahmoud/Desktop/ME/meds/images/background.png);
+border-radius:10px;
+font-size:16px;
+}
+QPushButton:hover
+{
+color:rgb(255,255,255);
+background-image:url(c:/Users/Mahmoud/Desktop/background2.png);
+border-radius:10px;
+background:#808080;
+}</string>
+       </property>
+       <property name="text">
+        <string>Chercheurs</string>
+       </property>
+      </widget>
+      <widget class="QPushButton" name="pushButton_4">
+       <property name="geometry">
+        <rect>
+         <x>30</x>
+         <y>440</y>
+         <width>181</width>
+         <height>51</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">QPushButton
+{
+color:rgb(0,0,0);
+background-image:url(c:/Users/Mahmoud/Desktop/ME/meds/images/background.png);
+border-radius:10px;
+font-size:16px;
+}
+QPushButton:hover
+{
+color:rgb(255,255,255);
+background-image:url(c:/Users/Mahmoud/Desktop/background2.png);
+border-radius:10px;
+background:#808080;
+}</string>
+       </property>
+       <property name="text">
+        <string>Medicament</string>
+       </property>
+      </widget>
+      <widget class="QPushButton" name="pushButton_5">
+       <property name="geometry">
+        <rect>
+         <x>30</x>
+         <y>280</y>
+         <width>181</width>
+         <height>51</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">QPushButton
+{
+color:rgb(0,0,0);
+background-image:url(c:/Users/Mahmoud/Desktop/ME/meds/images/background.png);
+border-radius:10px;
+font-size:16px;
+}
+QPushButton:hover
+{
+color:rgb(255,255,255);
+background-image:url(c:/Users/Mahmoud/Desktop/background2.png);
+border-radius:10px;
+background:#808080;
+}</string>
+       </property>
+       <property name="text">
+        <string>Recherches</string>
+       </property>
+      </widget>
+      <widget class="QPushButton" name="pushButton_7">
+       <property name="geometry">
+        <rect>
+         <x>30</x>
+         <y>360</y>
+         <width>181</width>
+         <height>51</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">QPushButton
+{
+color:rgb(0,0,0);
+background-image:url(c:/Users/Mahmoud/Desktop/ME/meds/images/background.png);
+border-radius:10px;
+font-size:16px;
+}
+QPushButton:hover
+{
+color:rgb(255,255,255);
+background-image:url(c:/Users/Mahmoud/Desktop/background2.png);
+border-radius:10px;
+background:#808080;
+}</string>
+       </property>
+       <property name="text">
+        <string>Employes</string>
+       </property>
       </widget>
      </widget>
-     <widget class="QPushButton" name="pushButton_10">
+     <widget class="QGroupBox" name="groupBox_6">
       <property name="geometry">
        <rect>
-        <x>450</x>
-        <y>650</y>
-        <width>111</width>
-        <height>31</height>
+        <x>350</x>
+        <y>150</y>
+        <width>821</width>
+        <height>541</height>
        </rect>
       </property>
       <property name="styleSheet">
-       <string notr="true">QPushButton
+       <string notr="true">background:transparent;</string>
+      </property>
+      <property name="title">
+       <string>GroupBox</string>
+      </property>
+      <widget class="QLabel" name="label_29">
+       <property name="geometry">
+        <rect>
+         <x>0</x>
+         <y>0</y>
+         <width>821</width>
+         <height>61</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">background-image:url(c:/Users/Mahmoud/Desktop/ME/meds/images/background3.png);
+font: 700 15pt &quot;8514oem&quot;;
+color: rgb(255, 255, 255);
+font-size:30px;
+border-radius:8px;</string>
+       </property>
+       <property name="text">
+        <string>                               Liste des médicaments</string>
+       </property>
+      </widget>
+      <widget class="QPushButton" name="pb_pdf">
+       <property name="geometry">
+        <rect>
+         <x>200</x>
+         <y>490</y>
+         <width>111</width>
+         <height>31</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">QPushButton
 {
 color:rgb(0,0,0);
-background-image:url(c:/Users/Mahmoud/Desktop/background.png);
+background-image:url(c:/Users/Mahmoud/Desktop/ME/meds/images/background.png);
 border-radius:10px;
 font-size:16px;
 }
@@ -250,42 +295,193 @@ background-image:url(c:/Users/Mahmoud/Desktop/background2.png);
 border-radius:10px;
 background:#3CB043;
 }</string>
-      </property>
-      <property name="text">
-       <string>PDF</string>
-      </property>
-     </widget>
-     <widget class="QLabel" name="label_29">
-      <property name="geometry">
-       <rect>
-        <x>450</x>
-        <y>150</y>
-        <width>411</width>
-        <height>61</height>
-       </rect>
-      </property>
-      <property name="styleSheet">
-       <string notr="true">background-image:url(c:/Users/Mahmoud/Desktop/background3.png);
-font: 700 15pt &quot;8514oem&quot;;
-color: rgb(255, 255, 255);
-font-size:30px;
-border-radius:8px;</string>
-      </property>
-      <property name="text">
-       <string>        List of medications</string>
-      </property>
+       </property>
+       <property name="text">
+        <string>PDF</string>
+       </property>
+      </widget>
+      <widget class="QComboBox" name="comboBox">
+       <property name="geometry">
+        <rect>
+         <x>480</x>
+         <y>490</y>
+         <width>151</width>
+         <height>31</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">background-image:url(c:/Users/Mahmoud/Desktop/ME/meds/images/background.png);
+color: rgb(0, 0, 0);
+border:1px solid #234F1E;
+border:none;
+</string>
+       </property>
+       <item>
+        <property name="text">
+         <string>Identifiant</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>Nom du produit</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>Nom DCI</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>dosage</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>Date de sortie</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>Date d'expiration</string>
+        </property>
+       </item>
+      </widget>
+      <widget class="QScrollArea" name="scrollArea_3">
+       <property name="geometry">
+        <rect>
+         <x>40</x>
+         <y>70</y>
+         <width>771</width>
+         <height>411</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">background-image:url(c:/Users/Mahmoud/Desktop/ME/meds/images/background2.png);
+border-radius:10px;
+background:#023020;</string>
+       </property>
+       <property name="widgetResizable">
+        <bool>true</bool>
+       </property>
+       <widget class="QWidget" name="scrollAreaWidgetContents_9">
+        <property name="geometry">
+         <rect>
+          <x>0</x>
+          <y>0</y>
+          <width>771</width>
+          <height>411</height>
+         </rect>
+        </property>
+        <widget class="QPushButton" name="pb_search_3">
+         <property name="geometry">
+          <rect>
+           <x>600</x>
+           <y>30</y>
+           <width>121</width>
+           <height>31</height>
+          </rect>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">QPushButton
+{
+color:rgb(0,0,0);
+background-image:url(c:/Users/Mahmoud/Desktop/ME/meds/images/background.png);
+border-radius:10px;
+font-size:16px;
+}
+QPushButton:hover
+{
+color:rgb(255,255,255);
+background-image:url(c:/Users/Mahmoud/Desktop/background2.png);
+border-radius:10px;
+background:#808080;
+}</string>
+         </property>
+         <property name="text">
+          <string>Chercher</string>
+         </property>
+         <property name="icon">
+          <iconset resource="reserouces.qrc">
+           <normaloff>:/icons/images/search.png</normaloff>:/icons/images/search.png</iconset>
+         </property>
+        </widget>
+        <widget class="QLineEdit" name="searchBox_4">
+         <property name="geometry">
+          <rect>
+           <x>50</x>
+           <y>30</y>
+           <width>521</width>
+           <height>31</height>
+          </rect>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">background-image:url(c:/Users/Mahmoud/Desktop/ME/meds/images/background.png);</string>
+         </property>
+         <property name="text">
+          <string/>
+         </property>
+         <property name="placeholderText">
+          <string>Id : 123456789</string>
+         </property>
+        </widget>
+        <widget class="QTableView" name="table_meds">
+         <property name="geometry">
+          <rect>
+           <x>0</x>
+           <y>70</y>
+           <width>771</width>
+           <height>331</height>
+          </rect>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">background-image:url(c:/Users/Mahmoud/Desktop/ME/meds/images/background.png);
+font-size:15px;</string>
+         </property>
+        </widget>
+       </widget>
+      </widget>
+      <widget class="QPushButton" name="statspb">
+       <property name="geometry">
+        <rect>
+         <x>340</x>
+         <y>490</y>
+         <width>111</width>
+         <height>31</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">QPushButton
+{
+color:rgb(0,0,0);
+background-image:url(c:/Users/Mahmoud/Desktop/ME/meds/images/background.png);
+border-radius:10px;
+font-size:16px;
+}
+QPushButton:hover
+{
+color:rgb(255,255,255);
+background-image:url(c:/Users/Mahmoud/Desktop/background2.png);
+border-radius:10px;
+background:#3CB043;
+}</string>
+       </property>
+       <property name="text">
+        <string>Statistique</string>
+       </property>
+      </widget>
      </widget>
     </widget>
     <widget class="QWidget" name="tab">
      <attribute name="title">
-      <string>Add</string>
+      <string>Ajouter</string>
      </attribute>
      <widget class="QGroupBox" name="groupBox">
       <property name="geometry">
        <rect>
-        <x>460</x>
-        <y>180</y>
-        <width>411</width>
+        <x>70</x>
+        <y>190</y>
+        <width>461</width>
         <height>491</height>
        </rect>
       </property>
@@ -295,11 +491,11 @@ border-radius:8px;</string>
       <property name="title">
        <string>GroupBox</string>
       </property>
-      <widget class="QLineEdit" name="lineEdit_9">
+      <widget class="QLineEdit" name="le_de">
        <property name="geometry">
         <rect>
-         <x>100</x>
-         <y>380</y>
+         <x>130</x>
+         <y>390</y>
          <width>201</width>
          <height>24</height>
         </rect>
@@ -320,8 +516,8 @@ color:white;</string>
       <widget class="QLabel" name="label_17">
        <property name="geometry">
         <rect>
-         <x>100</x>
-         <y>300</y>
+         <x>130</x>
+         <y>310</y>
          <width>111</width>
          <height>16</height>
         </rect>
@@ -333,14 +529,14 @@ background:transparent;
 font-size:16px;</string>
        </property>
        <property name="text">
-        <string>Release date :</string>
+        <string>Date de sortie :</string>
        </property>
       </widget>
       <widget class="QLabel" name="label_15">
        <property name="geometry">
         <rect>
-         <x>100</x>
-         <y>230</y>
+         <x>130</x>
+         <y>240</y>
          <width>101</width>
          <height>21</height>
         </rect>
@@ -358,8 +554,8 @@ font-size:16px;</string>
       <widget class="QPushButton" name="pushButton_6">
        <property name="geometry">
         <rect>
-         <x>210</x>
-         <y>430</y>
+         <x>240</x>
+         <y>440</y>
          <width>81</width>
          <height>31</height>
         </rect>
@@ -368,7 +564,7 @@ font-size:16px;</string>
         <string notr="true">QPushButton
 {
 color:rgb(0,0,0);
-background-image:url(c:/Users/Mahmoud/Desktop/background.png);
+background-image:url(c:/Users/Mahmoud/Desktop/ME/meds/images/background.png);
 border-radius:10px;
 font-size:14px;
 }
@@ -384,11 +580,11 @@ background:#3CB043;
         <string>Reset</string>
        </property>
       </widget>
-      <widget class="QLineEdit" name="lineEdit_10">
+      <widget class="QLineEdit" name="le_ds">
        <property name="geometry">
         <rect>
-         <x>100</x>
-         <y>320</y>
+         <x>130</x>
+         <y>330</y>
          <width>191</width>
          <height>24</height>
         </rect>
@@ -406,11 +602,11 @@ color:white;</string>
         <string>14/10/2022</string>
        </property>
       </widget>
-      <widget class="QLineEdit" name="lineEdit_21">
+      <widget class="QLineEdit" name="le_id">
        <property name="geometry">
         <rect>
-         <x>100</x>
-         <y>50</y>
+         <x>130</x>
+         <y>60</y>
          <width>191</width>
          <height>31</height>
         </rect>
@@ -435,11 +631,11 @@ color:white;
         <string>123456789</string>
        </property>
       </widget>
-      <widget class="QLineEdit" name="lineEdit_18">
+      <widget class="QLineEdit" name="le_commercial">
        <property name="geometry">
         <rect>
-         <x>100</x>
-         <y>120</y>
+         <x>130</x>
+         <y>130</y>
          <width>191</width>
          <height>31</height>
         </rect>
@@ -457,11 +653,11 @@ color:white;</string>
         <string>Doliprane</string>
        </property>
       </widget>
-      <widget class="QLineEdit" name="lineEdit_7">
+      <widget class="QLineEdit" name="le_dci">
        <property name="geometry">
         <rect>
-         <x>100</x>
-         <y>190</y>
+         <x>130</x>
+         <y>200</y>
          <width>191</width>
          <height>24</height>
         </rect>
@@ -479,11 +675,11 @@ color:white;</string>
         <string>Paracétamol</string>
        </property>
       </widget>
-      <widget class="QLineEdit" name="lineEdit_8">
+      <widget class="QLineEdit" name="le_dosage">
        <property name="geometry">
         <rect>
-         <x>100</x>
-         <y>260</y>
+         <x>130</x>
+         <y>270</y>
          <width>191</width>
          <height>24</height>
         </rect>
@@ -504,8 +700,8 @@ color:white;</string>
       <widget class="QLabel" name="label_14">
        <property name="geometry">
         <rect>
-         <x>100</x>
-         <y>160</y>
+         <x>130</x>
+         <y>170</y>
          <width>271</width>
          <height>21</height>
         </rect>
@@ -517,14 +713,14 @@ background:transparent;
 font-size:16px;</string>
        </property>
        <property name="text">
-        <string>DCI name </string>
+        <string>Nom du DCI :</string>
        </property>
       </widget>
       <widget class="QLabel" name="label_18">
        <property name="geometry">
         <rect>
-         <x>100</x>
-         <y>360</y>
+         <x>130</x>
+         <y>370</y>
          <width>131</width>
          <height>16</height>
         </rect>
@@ -536,14 +732,14 @@ background:transparent;
 font-size:16px;</string>
        </property>
        <property name="text">
-        <string>Expiration date :</string>
+        <string>Date d'expiration : </string>
        </property>
       </widget>
       <widget class="QLabel" name="label_13">
        <property name="geometry">
         <rect>
-         <x>100</x>
-         <y>100</y>
+         <x>130</x>
+         <y>110</y>
          <width>171</width>
          <height>16</height>
         </rect>
@@ -555,14 +751,14 @@ background:transparent;
 font-size:16px;</string>
        </property>
        <property name="text">
-        <string>Commercial name :</string>
+        <string>Nom commercial :</string>
        </property>
       </widget>
       <widget class="QLabel" name="label_16">
        <property name="geometry">
         <rect>
-         <x>100</x>
-         <y>30</y>
+         <x>130</x>
+         <y>40</y>
          <width>101</width>
          <height>16</height>
         </rect>
@@ -577,11 +773,11 @@ font-size:16px;</string>
         <string>ID :</string>
        </property>
       </widget>
-      <widget class="QPushButton" name="pushButton_5">
+      <widget class="QPushButton" name="add_here">
        <property name="geometry">
         <rect>
-         <x>110</x>
-         <y>430</y>
+         <x>140</x>
+         <y>440</y>
          <width>81</width>
          <height>31</height>
         </rect>
@@ -590,7 +786,7 @@ font-size:16px;</string>
         <string notr="true">QPushButton
 {
 color:rgb(0,0,0);
-background-image:url(c:/Users/Mahmoud/Desktop/background.png);
+background-image:url(c:/Users/Mahmoud/Desktop/ME/meds/images/background.png);
 border-radius:10px;
 font-size:14px;
 }
@@ -603,46 +799,108 @@ background:#3CB043;
 }</string>
        </property>
        <property name="text">
-        <string>Add</string>
+        <string>Ajouter</string>
        </property>
       </widget>
      </widget>
      <widget class="QLabel" name="label_28">
       <property name="geometry">
        <rect>
-        <x>460</x>
-        <y>140</y>
-        <width>411</width>
+        <x>70</x>
+        <y>150</y>
+        <width>461</width>
         <height>61</height>
        </rect>
       </property>
       <property name="styleSheet">
-       <string notr="true">background-image:url(c:/Users/Mahmoud/Desktop/background3.png);
+       <string notr="true">background-image:url(c:/Users/Mahmoud/Desktop/ME/meds/images/background3.png);
 font: 700 15pt &quot;8514oem&quot;;
 color: rgb(255, 255, 255);
 font-size:30px;
 border-radius:8px;</string>
       </property>
       <property name="text">
-       <string>           Add a medication</string>
+       <string>        Ajouter un médicament</string>
       </property>
      </widget>
-    </widget>
-    <widget class="QWidget" name="tab_3">
-     <attribute name="title">
-      <string>Modify</string>
-     </attribute>
-     <widget class="QScrollArea" name="scrollArea_5">
+     <widget class="QScrollArea" name="scrollArea_7">
       <property name="geometry">
        <rect>
-        <x>50</x>
-        <y>230</y>
+        <x>590</x>
+        <y>220</y>
         <width>631</width>
         <height>411</height>
        </rect>
       </property>
       <property name="styleSheet">
-       <string notr="true">background-image:url(c:/Users/Mahmoud/Desktop/background2.png);
+       <string notr="true">background-image:url(c:/Users/Mahmoud/Desktop/ME/meds/images/background2.png);
+border-radius:10px;
+background:#023020;</string>
+      </property>
+      <property name="widgetResizable">
+       <bool>true</bool>
+      </property>
+      <widget class="QWidget" name="scrollAreaWidgetContents_7">
+       <property name="geometry">
+        <rect>
+         <x>0</x>
+         <y>0</y>
+         <width>631</width>
+         <height>411</height>
+        </rect>
+       </property>
+       <widget class="QTableView" name="table_meds_6">
+        <property name="geometry">
+         <rect>
+          <x>0</x>
+          <y>60</y>
+          <width>631</width>
+          <height>351</height>
+         </rect>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">background-image:url(c:/Users/Mahmoud/Desktop/ME/meds/images/background.png);
+font-size:15px;</string>
+        </property>
+       </widget>
+       <widget class="QLabel" name="label_38">
+        <property name="geometry">
+         <rect>
+          <x>0</x>
+          <y>0</y>
+          <width>631</width>
+          <height>61</height>
+         </rect>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">background-image:url(c:/Users/Mahmoud/Desktop/ME/meds/images/background3.png);
+font: 700 15pt &quot;8514oem&quot;;
+color: rgb(255, 255, 255);
+font-size:30px;
+border-radius:8px;</string>
+        </property>
+        <property name="text">
+         <string>                    Médicaments ajoutés</string>
+        </property>
+       </widget>
+      </widget>
+     </widget>
+    </widget>
+    <widget class="QWidget" name="tab_3">
+     <attribute name="title">
+      <string>Modifier</string>
+     </attribute>
+     <widget class="QScrollArea" name="scrollArea_5">
+      <property name="geometry">
+       <rect>
+        <x>590</x>
+        <y>220</y>
+        <width>631</width>
+        <height>411</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-image:url(c:/Users/Mahmoud/Desktop/ME/meds/images/background2.png);
 border-radius:10px;
 background:#023020;</string>
       </property>
@@ -658,106 +916,48 @@ background:#023020;</string>
          <height>411</height>
         </rect>
        </property>
-       <widget class="QPushButton" name="pushButton_16">
-        <property name="geometry">
-         <rect>
-          <x>480</x>
-          <y>40</y>
-          <width>111</width>
-          <height>31</height>
-         </rect>
-        </property>
-        <property name="styleSheet">
-         <string notr="true">QPushButton
-{
-color:rgb(0,0,0);
-background-image:url(c:/Users/Mahmoud/Desktop/background.png);
-border-radius:10px;
-font-size:16px;
-}
-QPushButton:hover
-{
-color:rgb(255,255,255);
-background-image:url(c:/Users/Mahmoud/Desktop/background2.png);
-border-radius:10px;
-background:#808080;
-}</string>
-        </property>
-        <property name="text">
-         <string>Search </string>
-        </property>
-        <property name="icon">
-         <iconset resource="reserouces.qrc">
-          <normaloff>:/icons/images/search.png</normaloff>:/icons/images/search.png</iconset>
-        </property>
-       </widget>
-       <widget class="QLineEdit" name="lineEdit_23">
-        <property name="geometry">
-         <rect>
-          <x>40</x>
-          <y>40</y>
-          <width>401</width>
-          <height>31</height>
-         </rect>
-        </property>
-        <property name="styleSheet">
-         <string notr="true">background-image:url(c:/Users/Mahmoud/Desktop/background.png);</string>
-        </property>
-        <property name="text">
-         <string/>
-        </property>
-       </widget>
-       <widget class="QTreeWidget" name="treeWidget_4">
+       <widget class="QTableView" name="table_meds_3">
         <property name="geometry">
          <rect>
           <x>0</x>
-          <y>90</y>
+          <y>60</y>
           <width>631</width>
-          <height>321</height>
+          <height>351</height>
          </rect>
         </property>
         <property name="styleSheet">
-         <string notr="true">background-image:url(c:/Users/Mahmoud/Desktop/background.png);</string>
+         <string notr="true">background-image:url(c:/Users/Mahmoud/Desktop/ME/meds/images/background.png);
+font-size:15px;</string>
         </property>
-        <column>
-         <property name="text">
-          <string>Nom commercial</string>
-         </property>
-        </column>
-        <column>
-         <property name="text">
-          <string>DCI name</string>
-         </property>
-        </column>
-        <column>
-         <property name="text">
-          <string>Dosage</string>
-         </property>
-        </column>
-        <column>
-         <property name="text">
-          <string>Indication</string>
-         </property>
-        </column>
-        <column>
-         <property name="text">
-          <string>Release date</string>
-         </property>
-        </column>
-        <column>
-         <property name="text">
-          <string>Expiration date</string>
-         </property>
-        </column>
+       </widget>
+       <widget class="QLabel" name="label_39">
+        <property name="geometry">
+         <rect>
+          <x>0</x>
+          <y>0</y>
+          <width>631</width>
+          <height>61</height>
+         </rect>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">background-image:url(c:/Users/Mahmoud/Desktop/ME/meds/images/background3.png);
+font: 700 15pt &quot;8514oem&quot;;
+color: rgb(255, 255, 255);
+font-size:30px;
+border-radius:8px;</string>
+        </property>
+        <property name="text">
+         <string>                    Liste des médicaments</string>
+        </property>
        </widget>
       </widget>
      </widget>
      <widget class="QGroupBox" name="groupBox_2">
       <property name="geometry">
        <rect>
-        <x>760</x>
+        <x>60</x>
         <y>190</y>
-        <width>421</width>
+        <width>451</width>
         <height>491</height>
        </rect>
       </property>
@@ -770,7 +970,7 @@ background:#808080;
       <widget class="QLabel" name="label_20">
        <property name="geometry">
         <rect>
-         <x>110</x>
+         <x>140</x>
          <y>170</y>
          <width>221</width>
          <height>21</height>
@@ -783,13 +983,13 @@ background:transparent;
 font-size:16px;</string>
        </property>
        <property name="text">
-        <string>DCI name : </string>
+        <string>Nom du DCI :</string>
        </property>
       </widget>
       <widget class="QPushButton" name="pushButton_8">
        <property name="geometry">
         <rect>
-         <x>220</x>
+         <x>250</x>
          <y>440</y>
          <width>81</width>
          <height>31</height>
@@ -799,7 +999,7 @@ font-size:16px;</string>
         <string notr="true">QPushButton
 {
 color:rgb(0,0,0);
-background-image:url(c:/Users/Mahmoud/Desktop/background.png);
+background-image:url(c:/Users/Mahmoud/Desktop/ME/meds/images/background.png);
 border-radius:10px;
 font-size:14px;
 }
@@ -812,13 +1012,13 @@ background:#3CB043;
 }</string>
        </property>
        <property name="text">
-        <string>Clear</string>
+        <string>Reset </string>
        </property>
       </widget>
       <widget class="QLabel" name="label_19">
        <property name="geometry">
         <rect>
-         <x>110</x>
+         <x>140</x>
          <y>100</y>
          <width>141</width>
          <height>16</height>
@@ -831,13 +1031,13 @@ background:transparent;
 font-size:16px;</string>
        </property>
        <property name="text">
-        <string>Commercial name :</string>
+        <string>Nom commercial :</string>
        </property>
       </widget>
-      <widget class="QLineEdit" name="lineEdit_14">
+      <widget class="QLineEdit" name="line_dci">
        <property name="geometry">
         <rect>
-         <x>110</x>
+         <x>140</x>
          <y>200</y>
          <width>191</width>
          <height>24</height>
@@ -856,10 +1056,10 @@ color:white;</string>
         <string>Paracétamol</string>
        </property>
       </widget>
-      <widget class="QLineEdit" name="lineEdit_16">
+      <widget class="QLineEdit" name="line_ds">
        <property name="geometry">
         <rect>
-         <x>110</x>
+         <x>140</x>
          <y>330</y>
          <width>191</width>
          <height>24</height>
@@ -881,7 +1081,7 @@ color:white;</string>
       <widget class="QLabel" name="label_23">
        <property name="geometry">
         <rect>
-         <x>110</x>
+         <x>140</x>
          <y>360</y>
          <width>131</width>
          <height>21</height>
@@ -894,13 +1094,13 @@ background:transparent;
 font-size:16px;</string>
        </property>
        <property name="text">
-        <string>Expiration date :</string>
+        <string>Date d'expiration :</string>
        </property>
       </widget>
-      <widget class="QLineEdit" name="lineEdit_25">
+      <widget class="QLineEdit" name="line_id">
        <property name="geometry">
         <rect>
-         <x>110</x>
+         <x>140</x>
          <y>70</y>
          <width>191</width>
          <height>24</height>
@@ -922,7 +1122,7 @@ color:white;</string>
       <widget class="QLabel" name="label_21">
        <property name="geometry">
         <rect>
-         <x>110</x>
+         <x>140</x>
          <y>230</y>
          <width>121</width>
          <height>21</height>
@@ -941,7 +1141,7 @@ font-size:16px;</string>
       <widget class="QLabel" name="label_30">
        <property name="geometry">
         <rect>
-         <x>110</x>
+         <x>140</x>
          <y>40</y>
          <width>141</width>
          <height>16</height>
@@ -957,10 +1157,10 @@ font-size:16px;</string>
         <string>ID :</string>
        </property>
       </widget>
-      <widget class="QLineEdit" name="lineEdit_15">
+      <widget class="QLineEdit" name="line_dosage">
        <property name="geometry">
         <rect>
-         <x>110</x>
+         <x>140</x>
          <y>260</y>
          <width>191</width>
          <height>24</height>
@@ -979,10 +1179,10 @@ color:white;</string>
         <string>1000g</string>
        </property>
       </widget>
-      <widget class="QLineEdit" name="lineEdit_17">
+      <widget class="QLineEdit" name="line_de">
        <property name="geometry">
         <rect>
-         <x>110</x>
+         <x>140</x>
          <y>390</y>
          <width>191</width>
          <height>24</height>
@@ -1001,10 +1201,10 @@ color:white;</string>
         <string>13/11/2023</string>
        </property>
       </widget>
-      <widget class="QPushButton" name="pushButton_7">
+      <widget class="QPushButton" name="update">
        <property name="geometry">
         <rect>
-         <x>110</x>
+         <x>140</x>
          <y>440</y>
          <width>81</width>
          <height>31</height>
@@ -1014,7 +1214,7 @@ color:white;</string>
         <string notr="true">QPushButton
 {
 color:rgb(0,0,0);
-background-image:url(c:/Users/Mahmoud/Desktop/background.png);
+background-image:url(c:/Users/Mahmoud/Desktop/ME/meds/images/background.png);
 border-radius:10px;
 font-size:14px;
 }
@@ -1027,13 +1227,13 @@ background:#3CB043;
 }</string>
        </property>
        <property name="text">
-        <string>Modify</string>
+        <string>Modifier</string>
        </property>
       </widget>
       <widget class="QLabel" name="label_22">
        <property name="geometry">
         <rect>
-         <x>110</x>
+         <x>140</x>
          <y>300</y>
          <width>121</width>
          <height>16</height>
@@ -1046,13 +1246,13 @@ background:transparent;
 font-size:16px;</string>
        </property>
        <property name="text">
-        <string>Release date :</string>
+        <string>Date de sortie :</string>
        </property>
       </widget>
-      <widget class="QLineEdit" name="lineEdit_22">
+      <widget class="QLineEdit" name="line_c">
        <property name="geometry">
         <rect>
-         <x>110</x>
+         <x>140</x>
          <y>130</y>
          <width>191</width>
          <height>24</height>
@@ -1075,42 +1275,121 @@ color:white;</string>
      <widget class="QLabel" name="label_27">
       <property name="geometry">
        <rect>
-        <x>760</x>
+        <x>60</x>
         <y>150</y>
-        <width>421</width>
+        <width>451</width>
         <height>61</height>
        </rect>
       </property>
       <property name="styleSheet">
-       <string notr="true">background-image:url(c:/Users/Mahmoud/Desktop/background3.png);
+       <string notr="true">background-image:url(c:/Users/Mahmoud/Desktop/ME/meds/images/background3.png);
 font: 700 15pt &quot;8514oem&quot;;
 color: rgb(255, 255, 255);
 font-size:30px;
 border-radius:8px;</string>
       </property>
       <property name="text">
-       <string>        Modify a medication</string>
+       <string>        Modifier un médicament</string>
       </property>
      </widget>
     </widget>
     <widget class="QWidget" name="tab_4">
      <attribute name="title">
-      <string>Delete</string>
+      <string>Supprimer</string>
      </attribute>
-     <widget class="QPushButton" name="pushButton_13">
+     <widget class="QGroupBox" name="groupBox_8">
       <property name="geometry">
        <rect>
-        <x>600</x>
-        <y>660</y>
-        <width>91</width>
-        <height>31</height>
+        <x>210</x>
+        <y>190</y>
+        <width>931</width>
+        <height>491</height>
        </rect>
       </property>
       <property name="styleSheet">
-       <string notr="true">QPushButton
+       <string notr="true">background:transparent;</string>
+      </property>
+      <property name="title">
+       <string>GroupBox</string>
+      </property>
+      <widget class="QScrollArea" name="scrollArea_4">
+       <property name="geometry">
+        <rect>
+         <x>60</x>
+         <y>40</y>
+         <width>821</width>
+         <height>391</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">background-image:url(c:/Users/Mahmoud/Desktop/ME/meds/images/background2.png);
+border-radius:10px;
+background:#023020;</string>
+       </property>
+       <property name="widgetResizable">
+        <bool>true</bool>
+       </property>
+       <widget class="QWidget" name="scrollAreaWidgetContents_5">
+        <property name="geometry">
+         <rect>
+          <x>0</x>
+          <y>0</y>
+          <width>821</width>
+          <height>391</height>
+         </rect>
+        </property>
+        <widget class="QLineEdit" name="searchBox_3">
+         <property name="geometry">
+          <rect>
+           <x>40</x>
+           <y>40</y>
+           <width>731</width>
+           <height>31</height>
+          </rect>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">background-image:url(c:/Users/Mahmoud/Desktop/ME/meds/images/background.png);</string>
+         </property>
+         <property name="text">
+          <string/>
+         </property>
+         <property name="placeholderText">
+          <string>Ecrivez un id pour supprimer puis cliquez sur &quot; supprimer &quot;, example ( id = 123456789 ) </string>
+         </property>
+        </widget>
+        <widget class="QTableView" name="table_meds_4">
+         <property name="geometry">
+          <rect>
+           <x>0</x>
+           <y>90</y>
+           <width>821</width>
+           <height>301</height>
+          </rect>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">background-image:url(c:/Users/Mahmoud/Desktop/ME/meds/images/background.png);
+font-size:15px;</string>
+         </property>
+        </widget>
+       </widget>
+      </widget>
+      <widget class="QPushButton" name="pb_delete">
+       <property name="enabled">
+        <bool>true</bool>
+       </property>
+       <property name="geometry">
+        <rect>
+         <x>400</x>
+         <y>450</y>
+         <width>91</width>
+         <height>31</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">QPushButton
 {
 color:rgb(0,0,0);
-background-image:url(c:/Users/Mahmoud/Desktop/background.png);
+background-image:url(c:/Users/Mahmoud/Desktop/ME/meds/images/background.png);
 border-radius:10px;
 font-size:14px;
 }
@@ -1121,158 +1400,44 @@ background-image:url(c:/Users/Mahmoud/Desktop/background2.png);
 border-radius:10px;
 background:#3CB043;
 }</string>
-      </property>
-      <property name="text">
-       <string>Delete</string>
-      </property>
-     </widget>
-     <widget class="QScrollArea" name="scrollArea_4">
-      <property name="geometry">
-       <rect>
-        <x>250</x>
-        <y>230</y>
-        <width>821</width>
-        <height>411</height>
-       </rect>
-      </property>
-      <property name="styleSheet">
-       <string notr="true">background-image:url(c:/Users/Mahmoud/Desktop/background2.png);
-border-radius:10px;
-background:#023020;</string>
-      </property>
-      <property name="widgetResizable">
-       <bool>true</bool>
-      </property>
-      <widget class="QWidget" name="scrollAreaWidgetContents_5">
-       <property name="geometry">
-        <rect>
-         <x>0</x>
-         <y>0</y>
-         <width>821</width>
-         <height>411</height>
-        </rect>
        </property>
-       <widget class="QPushButton" name="pushButton_17">
-        <property name="geometry">
-         <rect>
-          <x>680</x>
-          <y>40</y>
-          <width>111</width>
-          <height>31</height>
-         </rect>
-        </property>
-        <property name="styleSheet">
-         <string notr="true">QPushButton
-{
-color:rgb(0,0,0);
-background-image:url(c:/Users/Mahmoud/Desktop/background.png);
-border-radius:10px;
-font-size:16px;
-}
-QPushButton:hover
-{
-color:rgb(255,255,255);
-background-image:url(c:/Users/Mahmoud/Desktop/background2.png);
-border-radius:10px;
-background:#808080;
-}</string>
-        </property>
-        <property name="text">
-         <string>Search</string>
-        </property>
-        <property name="icon">
-         <iconset resource="reserouces.qrc">
-          <normaloff>:/icons/images/search.png</normaloff>:/icons/images/search.png</iconset>
-        </property>
-       </widget>
-       <widget class="QLineEdit" name="lineEdit_24">
-        <property name="geometry">
-         <rect>
-          <x>40</x>
-          <y>40</y>
-          <width>621</width>
-          <height>31</height>
-         </rect>
-        </property>
-        <property name="styleSheet">
-         <string notr="true">background-image:url(c:/Users/Mahmoud/Desktop/background.png);</string>
-        </property>
-        <property name="text">
-         <string/>
-        </property>
-       </widget>
-       <widget class="QTreeWidget" name="treeWidget_5">
-        <property name="geometry">
-         <rect>
-          <x>0</x>
-          <y>90</y>
-          <width>821</width>
-          <height>321</height>
-         </rect>
-        </property>
-        <property name="styleSheet">
-         <string notr="true">background-image:url(c:/Users/Mahmoud/Desktop/background.png);</string>
-        </property>
-        <column>
-         <property name="text">
-          <string>Commercial name</string>
-         </property>
-        </column>
-        <column>
-         <property name="text">
-          <string>DCI name</string>
-         </property>
-        </column>
-        <column>
-         <property name="text">
-          <string>Dosage</string>
-         </property>
-        </column>
-        <column>
-         <property name="text">
-          <string>release date</string>
-         </property>
-        </column>
-        <column>
-         <property name="text">
-          <string>expiration date</string>
-         </property>
-        </column>
-       </widget>
+       <property name="text">
+        <string>Supprimer</string>
+       </property>
       </widget>
      </widget>
-     <widget class="QLabel" name="label_26">
+     <widget class="QLabel" name="label_43">
       <property name="geometry">
        <rect>
-        <x>410</x>
+        <x>210</x>
         <y>150</y>
-        <width>481</width>
+        <width>931</width>
         <height>61</height>
        </rect>
       </property>
       <property name="styleSheet">
-       <string notr="true">background-image:url(c:/Users/Mahmoud/Desktop/background3.png);
+       <string notr="true">background-image:url(c:/Users/Mahmoud/Desktop/ME/meds/images/background3.png);
 font: 700 15pt &quot;8514oem&quot;;
 color: rgb(255, 255, 255);
 font-size:30px;
 border-radius:8px;</string>
       </property>
       <property name="text">
-       <string>            Delete a medication</string>
+       <string>                                  Supprimer un médicament</string>
       </property>
      </widget>
     </widget>
-    <widget class="QWidget" name="tab_2">
+    <widget class="QWidget" name="tab_5">
      <attribute name="title">
-      <string>Barcode</string>
+      <string>Notifications</string>
      </attribute>
-     <widget class="QGroupBox" name="groupBox_3">
+     <widget class="QGroupBox" name="groupBox_4">
       <property name="geometry">
        <rect>
-        <x>290</x>
-        <y>220</y>
-        <width>751</width>
-        <height>361</height>
+        <x>110</x>
+        <y>190</y>
+        <width>1111</width>
+        <height>501</height>
        </rect>
       </property>
       <property name="styleSheet">
@@ -1281,45 +1446,104 @@ border-radius:8px;</string>
       <property name="title">
        <string>GroupBox</string>
       </property>
-      <widget class="QLabel" name="label_24">
+      <widget class="QScrollArea" name="scrollArea_6">
        <property name="geometry">
         <rect>
-         <x>60</x>
-         <y>150</y>
-         <width>101</width>
-         <height>21</height>
+         <x>70</x>
+         <y>60</y>
+         <width>641</width>
+         <height>411</height>
         </rect>
        </property>
        <property name="styleSheet">
-        <string notr="true">background-image:url(c:/Users/Mahmoud/Desktop/background2.png);
+        <string notr="true">background-image:url(c:/Users/Mahmoud/Desktop/ME/meds/images/background2.png);
+border-radius:10px;
+background:#023020;</string>
+       </property>
+       <property name="widgetResizable">
+        <bool>true</bool>
+       </property>
+       <widget class="QWidget" name="scrollAreaWidgetContents_6">
+        <property name="geometry">
+         <rect>
+          <x>0</x>
+          <y>0</y>
+          <width>641</width>
+          <height>411</height>
+         </rect>
+        </property>
+        <widget class="QTableView" name="table_meds_5">
+         <property name="geometry">
+          <rect>
+           <x>0</x>
+           <y>60</y>
+           <width>641</width>
+           <height>351</height>
+          </rect>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">background-image:url(c:/Users/Mahmoud/Desktop/ME/meds/images/background.png);
+font-size:15px;</string>
+         </property>
+        </widget>
+        <widget class="QLabel" name="label_40">
+         <property name="geometry">
+          <rect>
+           <x>0</x>
+           <y>0</y>
+           <width>641</width>
+           <height>61</height>
+          </rect>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">background-image:url(c:/Users/Mahmoud/Desktop/ME/meds/images/background3.png);
+font: 700 15pt &quot;8514oem&quot;;
 color: rgb(255, 255, 255);
-background:transparent;
-font-size:16px;</string>
+font-size:30px;
+border-radius:8px;</string>
+         </property>
+         <property name="text">
+          <string>                    Cliquez puis vérifiez</string>
+         </property>
+        </widget>
+       </widget>
+      </widget>
+      <widget class="QPushButton" name="pushButton_11">
+       <property name="geometry">
+        <rect>
+         <x>870</x>
+         <y>450</y>
+         <width>81</width>
+         <height>31</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">QPushButton
+{
+color:rgb(0,0,0);
+background-image:url(c:/Users/Mahmoud/Desktop/ME/meds/images/background.png);
+border-radius:10px;
+font-size:14px;
+}
+QPushButton:hover
+{
+color:rgb(255,255,255);
+background-image:url(c:/Users/Mahmoud/Desktop/background2.png);
+border-radius:10px;
+background:#3CB043;
+}</string>
        </property>
        <property name="text">
-        <string>Type of code :</string>
+        <string>Reset </string>
        </property>
       </widget>
-      <widget class="QListWidget" name="listWidget_2">
+      <widget class="QLineEdit" name="notif_cm">
        <property name="geometry">
         <rect>
-         <x>460</x>
-         <y>70</y>
-         <width>256</width>
-         <height>241</height>
-        </rect>
-       </property>
-       <property name="styleSheet">
-        <string notr="true">background-image:url(c:/Users/Mahmoud/Desktop/background.png);</string>
-       </property>
-      </widget>
-      <widget class="QTextEdit" name="textEdit_2">
-       <property name="geometry">
-        <rect>
-         <x>50</x>
-         <y>100</y>
-         <width>291</width>
-         <height>31</height>
+         <x>760</x>
+         <y>140</y>
+         <width>191</width>
+         <height>24</height>
         </rect>
        </property>
        <property name="styleSheet">
@@ -1331,62 +1555,304 @@ border-bottom:1px solid #7CFC00;
 font-size:20px;
 color:white;</string>
        </property>
-       <property name="html">
-        <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
-&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;meta charset=&quot;utf-8&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
-p, li { white-space: pre-wrap; }
-hr { height: 1px; border-width: 0; }
-li.unchecked::marker { content: &quot;\2610&quot;; }
-li.checked::marker { content: &quot;\2612&quot;; }
-&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'Segoe UI'; font-size:20px; font-weight:400; font-style:normal;&quot;&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-       </property>
        <property name="placeholderText">
-        <string>65833254</string>
+        <string>Doliprane</string>
        </property>
       </widget>
-      <widget class="QComboBox" name="comboBox_4">
+      <widget class="QLabel" name="label_32">
        <property name="geometry">
         <rect>
-         <x>50</x>
-         <y>190</y>
-         <width>291</width>
-         <height>31</height>
+         <x>760</x>
+         <y>110</y>
+         <width>141</width>
+         <height>16</height>
         </rect>
        </property>
        <property name="styleSheet">
         <string notr="true">background-image:url(c:/Users/Mahmoud/Desktop/background2.png);
 color: rgb(255, 255, 255);
-border:1px solid #234F1E;
-border:none;
-</string>
+background:transparent;
+font-size:16px;</string>
        </property>
-       <item>
-        <property name="text">
-         <string>Standard 2 of 5</string>
-        </property>
-       </item>
-       <item>
-        <property name="text">
-         <string>Interleaved 2 of 5</string>
-        </property>
-       </item>
-       <item>
-        <property name="text">
-         <string>Code 93</string>
-        </property>
-       </item>
-       <item>
-        <property name="text">
-         <string>Code 39</string>
-        </property>
-       </item>
-       <item>
-        <property name="text">
-         <string>Code 128</string>
-        </property>
-       </item>
+       <property name="text">
+        <string>Nom commercial :</string>
+       </property>
       </widget>
+      <widget class="QLabel" name="label_33">
+       <property name="geometry">
+        <rect>
+         <x>760</x>
+         <y>370</y>
+         <width>131</width>
+         <height>21</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">background-image:url(c:/Users/Mahmoud/Desktop/background2.png);
+color: rgb(255, 255, 255);
+background:transparent;
+font-size:16px;</string>
+       </property>
+       <property name="text">
+        <string>Date d'expiration :</string>
+       </property>
+      </widget>
+      <widget class="QLineEdit" name="notif_de">
+       <property name="geometry">
+        <rect>
+         <x>760</x>
+         <y>400</y>
+         <width>191</width>
+         <height>24</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">background-color: rgb(255, 255, 255);
+background-image:url(c:/Users/Mahmoud/Desktop/background.png);
+background:transparent;
+border:none;
+border-bottom:1px solid #7CFC00;
+font-size:20px;
+color:white;</string>
+       </property>
+       <property name="placeholderText">
+        <string>2023/11/13</string>
+       </property>
+      </widget>
+      <widget class="QLabel" name="label_35">
+       <property name="geometry">
+        <rect>
+         <x>760</x>
+         <y>50</y>
+         <width>141</width>
+         <height>16</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">background-image:url(c:/Users/Mahmoud/Desktop/background2.png);
+color: rgb(255, 255, 255);
+background:transparent;
+font-size:16px;</string>
+       </property>
+       <property name="text">
+        <string>ID :</string>
+       </property>
+      </widget>
+      <widget class="QLineEdit" name="notif_id">
+       <property name="geometry">
+        <rect>
+         <x>760</x>
+         <y>80</y>
+         <width>191</width>
+         <height>24</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">background-color: rgb(255, 255, 255);
+background-image:url(c:/Users/Mahmoud/Desktop/background.png);
+background:transparent;
+border:none;
+border-bottom:1px solid #7CFC00;
+font-size:20px;
+color:white;</string>
+       </property>
+       <property name="placeholderText">
+        <string>123456789</string>
+       </property>
+      </widget>
+      <widget class="QLineEdit" name="notif_ds">
+       <property name="geometry">
+        <rect>
+         <x>760</x>
+         <y>340</y>
+         <width>191</width>
+         <height>24</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">background-color: rgb(255, 255, 255);
+background-image:url(c:/Users/Mahmoud/Desktop/background.png);
+background:transparent;
+border:none;
+border-bottom:1px solid #7CFC00;
+font-size:20px;
+color:white;</string>
+       </property>
+       <property name="placeholderText">
+        <string>2022/10/14</string>
+       </property>
+      </widget>
+      <widget class="QLabel" name="label_36">
+       <property name="geometry">
+        <rect>
+         <x>760</x>
+         <y>310</y>
+         <width>121</width>
+         <height>16</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">background-image:url(c:/Users/Mahmoud/Desktop/background2.png);
+color: rgb(255, 255, 255);
+background:transparent;
+font-size:16px;</string>
+       </property>
+       <property name="text">
+        <string>Date de sortie :</string>
+       </property>
+      </widget>
+      <widget class="QLineEdit" name="notif_dci">
+       <property name="geometry">
+        <rect>
+         <x>760</x>
+         <y>210</y>
+         <width>191</width>
+         <height>24</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">background-color: rgb(255, 255, 255);
+background-image:url(c:/Users/Mahmoud/Desktop/background.png);
+background:transparent;
+border:none;
+border-bottom:1px solid #7CFC00;
+font-size:20px;
+color:white;</string>
+       </property>
+       <property name="placeholderText">
+        <string>Paracétamol</string>
+       </property>
+      </widget>
+      <widget class="QLineEdit" name="notif_d">
+       <property name="geometry">
+        <rect>
+         <x>760</x>
+         <y>270</y>
+         <width>191</width>
+         <height>24</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">background-color: rgb(255, 255, 255);
+background-image:url(c:/Users/Mahmoud/Desktop/background.png);
+background:transparent;
+border:none;
+border-bottom:1px solid #7CFC00;
+font-size:20px;
+color:white;</string>
+       </property>
+       <property name="placeholderText">
+        <string>1000g</string>
+       </property>
+      </widget>
+      <widget class="QLabel" name="label_34">
+       <property name="geometry">
+        <rect>
+         <x>760</x>
+         <y>240</y>
+         <width>121</width>
+         <height>21</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">background-image:url(c:/Users/Mahmoud/Desktop/background2.png);
+color: rgb(255, 255, 255);
+background:transparent;
+font-size:16px;</string>
+       </property>
+       <property name="text">
+        <string>Dosage :</string>
+       </property>
+      </widget>
+      <widget class="QLabel" name="label_31">
+       <property name="geometry">
+        <rect>
+         <x>760</x>
+         <y>180</y>
+         <width>221</width>
+         <height>21</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">background-image:url(c:/Users/Mahmoud/Desktop/background2.png);
+color: rgb(255, 255, 255);
+background:transparent;
+font-size:16px;</string>
+       </property>
+       <property name="text">
+        <string>Nom du DCI :</string>
+       </property>
+      </widget>
+      <widget class="QPushButton" name="update_2">
+       <property name="geometry">
+        <rect>
+         <x>760</x>
+         <y>450</y>
+         <width>81</width>
+         <height>31</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">QPushButton
+{
+color:rgb(0,0,0);
+background-image:url(c:/Users/Mahmoud/Desktop/ME/meds/images/background.png);
+border-radius:10px;
+font-size:14px;
+}
+QPushButton:hover
+{
+color:rgb(255,255,255);
+background-image:url(c:/Users/Mahmoud/Desktop/background2.png);
+border-radius:10px;
+background:#3CB043;
+}</string>
+       </property>
+       <property name="text">
+        <string>Vérifier</string>
+       </property>
+      </widget>
+     </widget>
+     <widget class="QLabel" name="label_37">
+      <property name="geometry">
+       <rect>
+        <x>110</x>
+        <y>150</y>
+        <width>1111</width>
+        <height>61</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-image:url(c:/Users/Mahmoud/Desktop/ME/meds/images/background3.png);
+font: 700 15pt &quot;8514oem&quot;;
+color: rgb(255, 255, 255);
+font-size:30px;
+border-radius:8px;</string>
+      </property>
+      <property name="text">
+       <string>                                                           Notification</string>
+      </property>
+     </widget>
+    </widget>
+    <widget class="QWidget" name="tab_2">
+     <attribute name="title">
+      <string>Code à barre</string>
+     </attribute>
+     <widget class="QGroupBox" name="groupBox_3">
+      <property name="geometry">
+       <rect>
+        <x>80</x>
+        <y>220</y>
+        <width>551</width>
+        <height>391</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background:transparent;</string>
+      </property>
+      <property name="title">
+       <string>GroupBox</string>
+      </property>
       <widget class="QLabel" name="label_11">
        <property name="geometry">
         <rect>
@@ -1403,14 +1869,14 @@ background:transparent;
 font-size:16px;</string>
        </property>
        <property name="text">
-        <string>Write down your code :</string>
+        <string>Enrtrez un id :</string>
        </property>
       </widget>
-      <widget class="QPushButton" name="pushButton_14">
+      <widget class="QPushButton" name="generatepb">
        <property name="geometry">
         <rect>
-         <x>120</x>
-         <y>260</y>
+         <x>60</x>
+         <y>250</y>
          <width>131</width>
          <height>41</height>
         </rect>
@@ -1419,7 +1885,7 @@ font-size:16px;</string>
         <string notr="true">QPushButton
 {
 color:rgb(0,0,0);
-background-image:url(c:/Users/Mahmoud/Desktop/background.png);
+background-image:url(c:/Users/Mahmoud/Desktop/ME/meds/images/background.png);
 border-radius:10px;
 font-size:18px;
 }
@@ -1432,181 +1898,323 @@ background:#3CB043;
 }</string>
        </property>
        <property name="text">
-        <string>Generate</string>
+        <string>Générer</string>
+       </property>
+      </widget>
+      <widget class="QPushButton" name="pushButton_18">
+       <property name="geometry">
+        <rect>
+         <x>210</x>
+         <y>250</y>
+         <width>131</width>
+         <height>41</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">QPushButton
+{
+color:rgb(0,0,0);
+background-image:url(c:/Users/Mahmoud/Desktop/ME/meds/images/background.png);
+border-radius:10px;
+font-size:18px;
+}
+QPushButton:hover
+{
+color:rgb(255,255,255);
+background-image:url(c:/Users/Mahmoud/Desktop/background2.png);
+border-radius:10px;
+background:#3CB043;
+}</string>
+       </property>
+       <property name="text">
+        <string>Reset</string>
+       </property>
+      </widget>
+      <widget class="QLineEdit" name="le_idg">
+       <property name="geometry">
+        <rect>
+         <x>60</x>
+         <y>100</y>
+         <width>241</width>
+         <height>31</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">background-color: rgb(255, 255, 255);
+background-image:url(c:/Users/Mahmoud/Desktop/background.png);
+background:transparent;
+border:none;
+border-bottom:1px solid #7CFC00;
+font-size:20px;
+color:white;
+</string>
+       </property>
+       <property name="inputMask">
+        <string/>
+       </property>
+       <property name="readOnly">
+        <bool>false</bool>
+       </property>
+       <property name="placeholderText">
+        <string>123456789</string>
+       </property>
+      </widget>
+      <widget class="QLabel" name="label_12">
+       <property name="geometry">
+        <rect>
+         <x>60</x>
+         <y>160</y>
+         <width>171</width>
+         <height>16</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">background-image:url(c:/Users/Mahmoud/Desktop/background2.png);
+color: rgb(255, 255, 255);
+background:transparent;
+font-size:16px;</string>
+       </property>
+       <property name="text">
+        <string>Entrez votre code :</string>
+       </property>
+      </widget>
+      <widget class="QLineEdit" name="le_code">
+       <property name="geometry">
+        <rect>
+         <x>60</x>
+         <y>190</y>
+         <width>241</width>
+         <height>31</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">background-color: rgb(255, 255, 255);
+background-image:url(c:/Users/Mahmoud/Desktop/background.png);
+background:transparent;
+border:none;
+border-bottom:1px solid #7CFC00;
+font-size:20px;
+color:white;
+</string>
+       </property>
+       <property name="inputMask">
+        <string/>
+       </property>
+       <property name="readOnly">
+        <bool>false</bool>
+       </property>
+       <property name="placeholderText">
+        <string>123456789</string>
        </property>
       </widget>
      </widget>
      <widget class="QLabel" name="label_25">
       <property name="geometry">
        <rect>
-        <x>290</x>
+        <x>80</x>
         <y>180</y>
-        <width>751</width>
+        <width>551</width>
         <height>61</height>
        </rect>
       </property>
       <property name="styleSheet">
-       <string notr="true">background-image:url(c:/Users/Mahmoud/Desktop/background3.png);
+       <string notr="true">background-image:url(c:/Users/Mahmoud/Desktop/ME/meds/images/background3.png);
 font: 700 15pt &quot;8514oem&quot;;
 color: rgb(255, 255, 255);
 font-size:30px;
 border-radius:8px;</string>
       </property>
       <property name="text">
-       <string>                             Generate a barcode</string>
+       <string>             Générer un code à barre</string>
       </property>
      </widget>
-    </widget>
-    <widget class="QWidget" name="tab_5">
-     <attribute name="title">
-      <string>Notifications</string>
-     </attribute>
-     <widget class="QScrollArea" name="scrollArea_6">
+     <widget class="QGroupBox" name="groupBox_7">
       <property name="geometry">
        <rect>
-        <x>200</x>
-        <y>160</y>
-        <width>921</width>
-        <height>521</height>
+        <x>640</x>
+        <y>220</y>
+        <width>581</width>
+        <height>391</height>
        </rect>
       </property>
       <property name="styleSheet">
-       <string notr="true">background-image:url(c:/Users/Mahmoud/Desktop/background2.png);
-border-radius:1px;
-background:#023020;</string>
+       <string notr="true">background:transparent;</string>
       </property>
-      <property name="widgetResizable">
-       <bool>true</bool>
+      <property name="title">
+       <string>GroupBox</string>
       </property>
-      <widget class="QWidget" name="scrollAreaWidgetContents_6">
+      <widget class="QLabel" name="label_24">
        <property name="geometry">
         <rect>
-         <x>0</x>
-         <y>0</y>
-         <width>921</width>
-         <height>521</height>
+         <x>60</x>
+         <y>70</y>
+         <width>171</width>
+         <height>16</height>
         </rect>
        </property>
-       <widget class="QLabel" name="label_12">
-        <property name="geometry">
-         <rect>
-          <x>280</x>
-          <y>20</y>
-          <width>311</width>
-          <height>61</height>
-         </rect>
+       <property name="styleSheet">
+        <string notr="true">background-image:url(c:/Users/Mahmoud/Desktop/background2.png);
+color: rgb(255, 255, 255);
+background:transparent;
+font-size:16px;</string>
+       </property>
+       <property name="text">
+        <string>Enrtrez un id :</string>
+       </property>
+      </widget>
+      <widget class="QPushButton" name="pushButton_19">
+       <property name="geometry">
+        <rect>
+         <x>120</x>
+         <y>250</y>
+         <width>131</width>
+         <height>41</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">QPushButton
+{
+color:rgb(0,0,0);
+background-image:url(c:/Users/Mahmoud/Desktop/ME/meds/images/background.png);
+border-radius:10px;
+font-size:18px;
+}
+QPushButton:hover
+{
+color:rgb(255,255,255);
+background-image:url(c:/Users/Mahmoud/Desktop/background2.png);
+border-radius:10px;
+background:#3CB043;
+}</string>
+       </property>
+       <property name="text">
+        <string>Reset</string>
+       </property>
+      </widget>
+      <widget class="QLineEdit" name="le_idg_2">
+       <property name="geometry">
+        <rect>
+         <x>60</x>
+         <y>100</y>
+         <width>241</width>
+         <height>31</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">background-color: rgb(255, 255, 255);
+background-image:url(c:/Users/Mahmoud/Desktop/background.png);
+background:transparent;
+border:none;
+border-bottom:1px solid #7CFC00;
+font-size:20px;
+color:white;
+</string>
+       </property>
+       <property name="inputMask">
+        <string/>
+       </property>
+       <property name="readOnly">
+        <bool>false</bool>
+       </property>
+       <property name="placeholderText">
+        <string>123456789</string>
+       </property>
+      </widget>
+      <widget class="QLabel" name="label_42">
+       <property name="geometry">
+        <rect>
+         <x>60</x>
+         <y>160</y>
+         <width>171</width>
+         <height>21</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">background-image:url(c:/Users/Mahmoud/Desktop/background2.png);
+color: rgb(255, 255, 255);
+background:transparent;
+font-size:16px;</string>
+       </property>
+       <property name="text">
+        <string>Choisir un type :</string>
+       </property>
+      </widget>
+      <widget class="QListWidget" name="listWidget">
+       <property name="geometry">
+        <rect>
+         <x>330</x>
+         <y>100</y>
+         <width>231</width>
+         <height>131</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">background-image: url(:/icons/images/barcode.png);
+border-color: rgb(255, 170, 127);</string>
+       </property>
+      </widget>
+      <widget class="QComboBox" name="comboBox_2">
+       <property name="geometry">
+        <rect>
+         <x>60</x>
+         <y>200</y>
+         <width>241</width>
+         <height>31</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">background-image:url(c:/Users/Mahmoud/Desktop/ME/meds/images/background.png);
+color: rgb(0, 0, 0);
+border:1px solid #234F1E;
+border:none;
+</string>
+       </property>
+       <item>
+        <property name="text">
+         <string>Importer</string>
         </property>
-        <property name="styleSheet">
-         <string notr="true">background-image:url(c:/Users/Mahmoud/Desktop/background3.png);
+       </item>
+       <item>
+        <property name="text">
+         <string>Code 128</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>Code 39</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>Code 93</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>EAN-13</string>
+        </property>
+       </item>
+      </widget>
+     </widget>
+     <widget class="QLabel" name="label_41">
+      <property name="geometry">
+       <rect>
+        <x>640</x>
+        <y>180</y>
+        <width>581</width>
+        <height>61</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-image:url(c:/Users/Mahmoud/Desktop/ME/meds/images/background3.png);
 font: 700 15pt &quot;8514oem&quot;;
 color: rgb(255, 255, 255);
 font-size:30px;
 border-radius:8px;</string>
-        </property>
-        <property name="text">
-         <string>         Notifications</string>
-        </property>
-       </widget>
-       <widget class="QListWidget" name="listWidget">
-        <property name="geometry">
-         <rect>
-          <x>50</x>
-          <y>140</y>
-          <width>251</width>
-          <height>331</height>
-         </rect>
-        </property>
-        <property name="styleSheet">
-         <string notr="true">background:white;
-</string>
-        </property>
-        <item>
-         <property name="text">
-          <string>Notification 1 : Medication with the id : 12322....</string>
-         </property>
-        </item>
-        <item>
-         <property name="text">
-          <string>Notification 2 : Medication with the id : 43242....</string>
-         </property>
-        </item>
-       </widget>
-       <widget class="QListWidget" name="listWidget_3">
-        <property name="geometry">
-         <rect>
-          <x>310</x>
-          <y>100</y>
-          <width>551</width>
-          <height>371</height>
-         </rect>
-        </property>
-        <property name="styleSheet">
-         <string notr="true">background:white;</string>
-        </property>
-       </widget>
-       <widget class="QLabel" name="label_31">
-        <property name="geometry">
-         <rect>
-          <x>50</x>
-          <y>100</y>
-          <width>261</width>
-          <height>41</height>
-         </rect>
-        </property>
-        <property name="styleSheet">
-         <string notr="true">background-image:url(c:/Users/Mahmoud/Desktop/background3.png);
-font: 700 15pt &quot;8514oem&quot;;
-color: rgb(255, 255, 255);
-font-size:20px;
-</string>
-        </property>
-        <property name="text">
-         <string>         Notifications list</string>
-        </property>
-       </widget>
-       <widget class="QLabel" name="label_32">
-        <property name="geometry">
-         <rect>
-          <x>310</x>
-          <y>100</y>
-          <width>551</width>
-          <height>41</height>
-         </rect>
-        </property>
-        <property name="styleSheet">
-         <string notr="true">background-image:url(c:/Users/Mahmoud/Desktop/background3.png);
-font: 700 15pt &quot;8514oem&quot;;
-color: rgb(255, 255, 255);
-font-size:30px;
-</string>
-        </property>
-        <property name="text">
-         <string>                       Conversation</string>
-        </property>
-       </widget>
-       <widget class="QLineEdit" name="lineEdit_26">
-        <property name="geometry">
-         <rect>
-          <x>310</x>
-          <y>440</y>
-          <width>551</width>
-          <height>31</height>
-         </rect>
-        </property>
-        <property name="styleSheet">
-         <string notr="true">background:grey;</string>
-        </property>
-        <property name="text">
-         <string/>
-        </property>
-        <property name="readOnly">
-         <bool>true</bool>
-        </property>
-        <property name="placeholderText">
-         <string>                                                                You can't reply to this person ....</string>
-        </property>
-       </widget>
-      </widget>
+      </property>
+      <property name="text">
+       <string>             Modifier  un code à barre</string>
+      </property>
      </widget>
     </widget>
    </widget>
@@ -1626,5 +2234,342 @@ font-size:30px;
  <resources>
   <include location="reserouces.qrc"/>
  </resources>
- <connections/>
+ <connections>
+  <connection>
+   <sender>pushButton_6</sender>
+   <signal>clicked()</signal>
+   <receiver>le_id</receiver>
+   <slot>clear()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>365</x>
+     <y>698</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>330</x>
+     <y>322</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>pushButton_6</sender>
+   <signal>clicked()</signal>
+   <receiver>le_commercial</receiver>
+   <slot>clear()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>385</x>
+     <y>685</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>304</x>
+     <y>385</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>pushButton_6</sender>
+   <signal>clicked()</signal>
+   <receiver>le_dci</receiver>
+   <slot>clear()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>392</x>
+     <y>705</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>291</x>
+     <y>444</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>pushButton_6</sender>
+   <signal>clicked()</signal>
+   <receiver>le_dosage</receiver>
+   <slot>clear()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>392</x>
+     <y>705</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>292</x>
+     <y>522</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>pushButton_6</sender>
+   <signal>clicked()</signal>
+   <receiver>le_ds</receiver>
+   <slot>clear()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>382</x>
+     <y>689</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>302</x>
+     <y>569</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>pushButton_6</sender>
+   <signal>clicked()</signal>
+   <receiver>le_de</receiver>
+   <slot>clear()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>383</x>
+     <y>684</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>330</x>
+     <y>636</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>pushButton_8</sender>
+   <signal>clicked()</signal>
+   <receiver>line_id</receiver>
+   <slot>clear()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>347</x>
+     <y>688</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>289</x>
+     <y>307</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>pushButton_8</sender>
+   <signal>clicked()</signal>
+   <receiver>line_c</receiver>
+   <slot>clear()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>368</x>
+     <y>687</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>312</x>
+     <y>380</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>pushButton_8</sender>
+   <signal>clicked()</signal>
+   <receiver>line_dci</receiver>
+   <slot>clear()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>355</x>
+     <y>690</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>288</x>
+     <y>454</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>pushButton_8</sender>
+   <signal>clicked()</signal>
+   <receiver>line_dosage</receiver>
+   <slot>clear()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>356</x>
+     <y>697</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>272</x>
+     <y>499</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>pushButton_8</sender>
+   <signal>clicked()</signal>
+   <receiver>line_ds</receiver>
+   <slot>clear()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>337</x>
+     <y>680</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>278</x>
+     <y>580</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>groupBox_2</sender>
+   <signal>clicked()</signal>
+   <receiver>line_de</receiver>
+   <slot>clear()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>372</x>
+     <y>706</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>294</x>
+     <y>640</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>pushButton_18</sender>
+   <signal>clicked()</signal>
+   <receiver>le_idg</receiver>
+   <slot>clear()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>354</x>
+     <y>555</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>261</x>
+     <y>395</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>pushButton_11</sender>
+   <signal>clicked()</signal>
+   <receiver>notif_id</receiver>
+   <slot>clear()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>1043</x>
+     <y>696</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>933</x>
+     <y>319</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>pushButton_11</sender>
+   <signal>clicked()</signal>
+   <receiver>notif_cm</receiver>
+   <slot>clear()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>1033</x>
+     <y>700</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>950</x>
+     <y>390</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>pushButton_11</sender>
+   <signal>clicked()</signal>
+   <receiver>notif_dci</receiver>
+   <slot>clear()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>1027</x>
+     <y>694</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>928</x>
+     <y>463</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>pushButton_11</sender>
+   <signal>clicked()</signal>
+   <receiver>notif_d</receiver>
+   <slot>clear()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>1033</x>
+     <y>694</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>942</x>
+     <y>521</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>pushButton_11</sender>
+   <signal>clicked()</signal>
+   <receiver>notif_ds</receiver>
+   <slot>clear()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>1026</x>
+     <y>689</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>921</x>
+     <y>592</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>pushButton_11</sender>
+   <signal>clicked()</signal>
+   <receiver>notif_de</receiver>
+   <slot>clear()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>1025</x>
+     <y>703</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>960</x>
+     <y>646</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>pushButton_18</sender>
+   <signal>clicked()</signal>
+   <receiver>le_code</receiver>
+   <slot>clear()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>378</x>
+     <y>555</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>289</x>
+     <y>485</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>pushButton_19</sender>
+   <signal>clicked()</signal>
+   <receiver>le_idg_2</receiver>
+   <slot>clear()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>892</x>
+     <y>555</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>782</x>
+     <y>384</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
 </ui>
