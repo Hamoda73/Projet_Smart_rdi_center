@@ -3,6 +3,7 @@
 
 #include <QMainWindow>
 #include "medicament.h"
+#include "arduino.h"
 #include <QSystemTrayIcon>
 #include <QComboBox>
 #include <QStandardItemModel>
@@ -26,6 +27,7 @@
 #include <zxing/oned/Code128Reader.h>
 #include <zxing/qrcode/ErrorCorrectionLevel.h>
 #include <vector>
+#include <QtSerialPort/QSerialPort>
 
 QT_BEGIN_NAMESPACE
 namespace Ui { class MainWindow; }
@@ -71,6 +73,10 @@ private slots:
 
     void on_comboBox_2_currentIndexChanged(int index);
 
+    void on_pushButton_9_clicked();
+
+    void update_label();
+
 private:
     Ui::MainWindow *ui;
     medicament mtp;
@@ -78,5 +84,9 @@ private:
     QSortFilterProxyModel *proxyModel;
     QLineEdit* m_lineEdit;
     QPushButton* m_button;
+    arduino A;
+    QByteArray data;
+    QSerialPort serial;
+
 };
 #endif // MAINWINDOW_H

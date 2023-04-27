@@ -37,7 +37,7 @@
 </string>
     </property>
     <property name="currentIndex">
-     <number>4</number>
+     <number>6</number>
     </property>
     <property name="usesScrollButtons">
      <bool>true</bool>
@@ -2215,6 +2215,145 @@ border-radius:8px;</string>
       <property name="text">
        <string>             Modifier  un code à barre</string>
       </property>
+     </widget>
+    </widget>
+    <widget class="QWidget" name="tab_6">
+     <attribute name="title">
+      <string>Arduino</string>
+     </attribute>
+     <widget class="QGroupBox" name="groupBox_9">
+      <property name="geometry">
+       <rect>
+        <x>310</x>
+        <y>230</y>
+        <width>731</width>
+        <height>401</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background:transparent;</string>
+      </property>
+      <property name="title">
+       <string>GroupBox</string>
+      </property>
+      <widget class="QLineEdit" name="code_arduino">
+       <property name="geometry">
+        <rect>
+         <x>100</x>
+         <y>120</y>
+         <width>191</width>
+         <height>31</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">background-color: rgb(255, 255, 255);
+background-image:url(c:/Users/Mahmoud/Desktop/background.png);
+background:transparent;
+border:none;
+border-bottom:1px solid #7CFC00;
+font-size:20px;
+color:white;
+</string>
+       </property>
+       <property name="inputMask">
+        <string/>
+       </property>
+       <property name="text">
+        <string/>
+       </property>
+       <property name="readOnly">
+        <bool>false</bool>
+       </property>
+       <property name="placeholderText">
+        <string>0000</string>
+       </property>
+      </widget>
+      <widget class="QLabel" name="label_26">
+       <property name="geometry">
+        <rect>
+         <x>100</x>
+         <y>80</y>
+         <width>171</width>
+         <height>16</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">background-image:url(c:/Users/Mahmoud/Desktop/background2.png);
+color: rgb(255, 255, 255);
+background:transparent;
+font-size:16px;</string>
+       </property>
+       <property name="text">
+        <string>Code :</string>
+       </property>
+      </widget>
+      <widget class="QLabel" name="arduino_label">
+       <property name="geometry">
+        <rect>
+         <x>370</x>
+         <y>130</y>
+         <width>171</width>
+         <height>16</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">background-image:url(c:/Users/Mahmoud/Desktop/background2.png);
+color: rgb(255, 255, 255);
+background:transparent;
+font-size:16px;</string>
+       </property>
+       <property name="text">
+        <string/>
+       </property>
+      </widget>
+      <widget class="QPushButton" name="pushButton_9">
+       <property name="geometry">
+        <rect>
+         <x>120</x>
+         <y>190</y>
+         <width>151</width>
+         <height>41</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">QPushButton
+{
+color:rgb(0,0,0);
+background-image:url(c:/Users/Mahmoud/Desktop/ME/meds/images/background.png);
+border-radius:10px;
+font-size:18px;
+}
+QPushButton:hover
+{
+color:rgb(255,255,255);
+background-image:url(c:/Users/Mahmoud/Desktop/background2.png);
+border-radius:10px;
+background:#3CB043;
+}</string>
+       </property>
+       <property name="text">
+        <string>Ouvrir</string>
+       </property>
+      </widget>
+      <widget class="QLabel" name="label_44">
+       <property name="geometry">
+        <rect>
+         <x>360</x>
+         <y>90</y>
+         <width>171</width>
+         <height>16</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">background-image:url(c:/Users/Mahmoud/Desktop/background2.png);
+color: rgb(255, 255, 255);
+background:transparent;
+font-size:16px;</string>
+       </property>
+       <property name="text">
+        <string>Status</string>
+       </property>
+      </widget>
      </widget>
     </widget>
    </widget>

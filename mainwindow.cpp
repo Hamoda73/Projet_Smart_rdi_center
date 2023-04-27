@@ -29,6 +29,17 @@ MainWindow::MainWindow(QWidget *parent)
     m_lineEdit = ui->le_code;
     m_button = ui->generatepb;
     connect(m_button, SIGNAL(clicked()), this, SLOT(generateBarcode()));
+
+    /////ARUIDNO
+    int ret=A.connect_arduino(); // lancer la connexion à arduino
+    switch(ret){
+    case(0):qDebug()<< "arduino is available and connected to : "<< A.getarduino_port_name();
+        break;
+    case(1):qDebug() << "arduino is available but not connected to :" <<A.getarduino_port_name();
+        break;
+    case(-1):qDebug() << "arduino is not available";
+    }
+    QObject::connect(A.getserial(),SIGNAL(readyRead()),this,SLOT(update_label()));
 }
 
 MainWindow::~MainWindow()
@@ -595,3 +606,25 @@ void MainWindow::on_comboBox_2_currentIndexChanged(int index)
     }
 }
 
+void MainWindow::on_pushButton_9_clicked()
+{
+    QString message = ui->code_arduino->text();
+    QByteArray data = message.toLocal8Bit();
+    A.write_to_arduino(data);
+    //QThread::msleep(100); // add a delay here
+    update_label();
+}
+
+void MainWindow::update_label()
+{
+    int i;
+    QByteArray data = A.read_from_arduino();
+    QString message = QString::fromUtf8(data);
+    if(message=="0000")
+    {
+               ui->arduino_label->setText("DOOR OPENED");
+    }
+    else {
+            ui->arduino_label->setText("DOOR CLOSED");
+    }
+}

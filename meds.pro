@@ -1,4 +1,4 @@
-QT       += core gui sql printsupport charts
+QT       += core gui sql printsupport charts serialport
 
 include(qzxing/src/QZXing.pri)
 
@@ -11,11 +11,13 @@ CONFIG += c++17 enable_encoder_qr_code
 #DEFINES += QT_DISABLE_DEPRECATED_BEFORE=0x060000    # disables all the APIs deprecated before Qt 6.0.0
 
 SOURCES += \
+    arduino.cpp \
     connection.cpp \
     medicament.cpp \
     main.cpp \
     mainwindow.cpp
 HEADERS += \
+    arduino.h \
     connection.h \
     medicament.h \
     mainwindow.h
