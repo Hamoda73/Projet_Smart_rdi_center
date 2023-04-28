@@ -9,7 +9,7 @@
 #include <QPrinter>
 #include <QFileDialog>
 #include <QPainter>
-
+#include "arduino.h"
 
 
 materiel::materiel(QWidget *parent) :
@@ -17,6 +17,86 @@ materiel::materiel(QWidget *parent) :
     ui(new Ui::materiel)
 {
     ui->setupUi(this);
+    ui->tableView_3adruino->setModel(Eqmp.afficherarduino());
+    int ret=A.connect_arduino(); // lancer la connexion à arduino
+        switch(ret){
+        case(0):qDebug()<< "arduino is available and connected to : "<< A.getarduino_port_name();
+
+
+            break;
+        case(1):qDebug() << "arduino is available but not connected to :" <<A.getarduino_port_name();
+            break;
+        case(-1):qDebug() << "arduino is not available";
+        }
+        QTimer *timer = new QTimer(this);
+        QTimer *ref = new QTimer(this);
+
+        // Set the timeout interval (in milliseconds)
+        timer->setInterval(100);
+        ref->setInterval(2000);
+        connect(ref, &QTimer::timeout, [=](){
+            ui->tableView_3adruino->setModel(Eqmp.afficherarduino());
+        });
+
+        // Connect the timeout() signal of the QTimer object to a lambda function
+        connect(timer, &QTimer::timeout, [=]() {
+
+
+            QByteArray data = A.readL_from_arduino();
+            QString dataString = QString::fromUtf8(data).trimmed(); // Convert the data to a QString and remove any leading/trailing white space
+            QString AZER = dataString;
+            if (AZER == "car") {
+
+                QDateTime currentDateTime = QDateTime::currentDateTime();
+                QString dateString = currentDateTime.toString(Qt::ISODate);
+
+
+                    QString in ="movement detected at :"+dateString ;
+                    QSqlQuery query;
+                    query.prepare("INSERT INTO HISTARD (HIST,OPEN) VALUES (:HIST,:OPEN)");
+                    query.bindValue(":HIST", in);
+                    query.bindValue(":OPEN", "---");
+                    ui->tableView_3adruino->setModel(Eqmp.afficherarduino());
+
+
+
+                    if (!query.exec()) {
+                        qDebug() << "Failed to insert data into database";
+                        }
+
+
+                QMessageBox::information(this, "Car Detected", "A car has been detected!"); // Show a message box if the AZER string variable contains "car"
+                }
+            QString wordToFind = "Car entred at" ;
+
+            bool found = AZER.contains(wordToFind);
+            if (found) {
+                QDateTime currentDateTime = QDateTime::currentDateTime();
+                QString dateString = currentDateTime.toString(Qt::ISODate);
+                AZER=AZER+dateString ;
+                QSqlQuery query;
+                query.prepare("INSERT INTO HISTARD (HIST,OPEN) VALUES (:HIST,:OPEN)");
+                query.bindValue(":HIST", "---");
+                query.bindValue(":OPEN", AZER);
+
+
+
+
+
+                if (!query.exec()) {
+                    qDebug() << "Failed to insert data into database";
+                    }
+            }
+
+        });
+
+
+        timer->start();
+        ref->start();
+
+
+
+
     ui->le_id->setValidator(new QIntValidator(0,9999999,this));
     ui->le_nom->setValidator( new QRegularExpressionValidator(QRegularExpression("[A-Za-z]+"), this));
     ui->le_nom->setMaxLength(12);
@@ -30,6 +110,7 @@ materiel::materiel(QWidget *parent) :
     ui->le_etat_2->setMaxLength(12);
 
     ui->tableView_2->setModel(Eqmp.afficher());
+    ui->tableView_3adruino->setModel(Eqmp.afficherarduino());
     connect(ui->searchbox, SIGNAL(textChanged(const QString&)), this, SLOT(on_searchbox_textChanged(const QString&)));
 
 
@@ -216,7 +297,7 @@ void materiel::on_sendemail_clicked()
         EmailSender emailSender;
 
         QString user = "mohamedprojectqt@gmail.com";
-        QString password = "bhynnrprgfifddlf";
+        QString password = "zdweswndyhdpkkzb";
         QString from = "mohamedprojectqt@gmail.com";
         QString to = ui->to_edit->text();
         QString subject = ui->subject_edit->text();
@@ -380,4 +461,34 @@ void materiel::on_pushButton_16_clicked()
 Eqmp.displayInventoryPieChart();
 
 }
+
+
+void materiel::on_pushButton_clicked()
+{
+
+}
+
+
+void materiel::on_Open_clicked()
+{
+    A.write_to_arduino("1");
+
+
+
+
+}
+
+
+void materiel::on_Close_clicked()
+{
+    A.write_to_arduino("2");
+
+
+
+
+
+
+
+}
+
 

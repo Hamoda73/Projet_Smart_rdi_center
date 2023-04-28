@@ -91,7 +91,7 @@ font: 700 9pt &quot;Segoe UI&quot;;
 background-image: url(:/img/rsz_backg1.jpg);</string>
      </property>
      <property name="currentIndex">
-      <number>4</number>
+      <number>5</number>
      </property>
      <widget class="QWidget" name="tab_11">
       <attribute name="title">
@@ -1858,6 +1858,196 @@ border-radius:8px;
        </property>
        <property name="plainText">
         <string>  Qr code generator</string>
+       </property>
+      </widget>
+     </widget>
+     <widget class="QWidget" name="tab_2">
+      <attribute name="title">
+       <string>Parking lot</string>
+      </attribute>
+      <widget class="QGroupBox" name="groupBox_25">
+       <property name="geometry">
+        <rect>
+         <x>60</x>
+         <y>170</y>
+         <width>331</width>
+         <height>231</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true"> text-color: rgb(0, 0, 0);
+background-image: url(:/img/360_F_69019892_B4lc0tM8Q6JXI42OvK2szAowVUr7qZJs.jpg);
+font: 900 12pt &quot;Segoe UI Black&quot;;
+ 
+background-color: rgb(152, 127, 236);
+color: rgb(0, 0, 0);
+ text-color: rgb(0, 0, 0);
+background-image: url(:/img/360_F_69019892_B4lc0tM8Q6JXI42OvK2szAowVUr7qZJs.jpg);
+font: 900 12pt &quot;Segoe UI Black&quot;;
+ 
+background-color: rgb(152, 127, 236);
+color: rgb(0, 0, 0);
+background:transparent;
+ </string>
+       </property>
+       <property name="title">
+        <string/>
+       </property>
+       <widget class="QPushButton" name="Close">
+        <property name="geometry">
+         <rect>
+          <x>170</x>
+          <y>120</y>
+          <width>83</width>
+          <height>29</height>
+         </rect>
+        </property>
+        <property name="styleSheet">
+         <string notr="true"> 
+*{
+ font-family:century gothic;
+   font-size:14px;
+}
+
+QFrame
+{
+ 	 
+}
+QPushButton
+{
+
+	
+	background-image: url(:/img/360_F_261490536_nJ5LSRAVZA0CK9Nvt2E1fXJVUfpiqvhT.jpg);
+}
+QPushButton
+{
+ border-radius:8px;
+}
+QPushButton:hover
+{
+color:rgb(255,255,255);
+ 
+border-radius:10px;
+background:#3CB043;
+}</string>
+        </property>
+        <property name="text">
+         <string>CLOSE</string>
+        </property>
+       </widget>
+       <widget class="QPushButton" name="Open">
+        <property name="geometry">
+         <rect>
+          <x>80</x>
+          <y>120</y>
+          <width>83</width>
+          <height>29</height>
+         </rect>
+        </property>
+        <property name="styleSheet">
+         <string notr="true"> 
+*{
+ font-family:century gothic;
+   font-size:14px;
+}
+
+QFrame
+{
+ 	 
+}
+QPushButton
+{
+
+	
+	background-image: url(:/img/360_F_261490536_nJ5LSRAVZA0CK9Nvt2E1fXJVUfpiqvhT.jpg);
+}
+QPushButton
+{
+ border-radius:8px;
+}
+QPushButton:hover
+{
+color:rgb(255,255,255);
+ 
+border-radius:10px;
+background:#3CB043;
+}</string>
+        </property>
+        <property name="text">
+         <string>OPEN</string>
+        </property>
+       </widget>
+       <widget class="QLabel" name="label_59">
+        <property name="geometry">
+         <rect>
+          <x>80</x>
+          <y>60</y>
+          <width>181</width>
+          <height>20</height>
+         </rect>
+        </property>
+        <property name="styleSheet">
+         <string notr="true"> 
+color: rgb(255, 255, 255);
+font: 9pt &quot;Segoe UI&quot;;</string>
+        </property>
+        <property name="text">
+         <string>Open the door or close it</string>
+        </property>
+       </widget>
+      </widget>
+      <widget class="QPlainTextEdit" name="plainTextEdit_40">
+       <property name="geometry">
+        <rect>
+         <x>60</x>
+         <y>150</y>
+         <width>331</width>
+         <height>41</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">font: 700 15pt &quot;8514oem&quot;;
+color: rgb(255, 255, 255);
+background-image: url(:/img/download.png);
+border-radius:8px;
+</string>
+       </property>
+       <property name="plainText">
+        <string>🅿️  PARKING DOOR</string>
+       </property>
+      </widget>
+      <widget class="QPlainTextEdit" name="plainTextEdit_17">
+       <property name="geometry">
+        <rect>
+         <x>410</x>
+         <y>150</y>
+         <width>571</width>
+         <height>31</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">font: 700 15pt &quot;8514oem&quot;;
+color: rgb(255, 255, 255);
+background-image: url(:/img/download.png);
+border-radius:10px;</string>
+       </property>
+       <property name="plainText">
+        <string>           Historique des voitures entre</string>
+       </property>
+      </widget>
+      <widget class="QTableView" name="tableView_3adruino">
+       <property name="geometry">
+        <rect>
+         <x>410</x>
+         <y>191</y>
+         <width>571</width>
+         <height>211</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true"> border-radius:10px;
+background-image: url(:/img/360_F_69019892_B4lc0tM8Q6JXI42OvK2szAowVUr7qZJs.jpg);
+color: rgb(0, 0, 0);</string>
        </property>
       </widget>
      </widget>

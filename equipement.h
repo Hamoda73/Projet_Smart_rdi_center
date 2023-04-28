@@ -74,6 +74,7 @@ public:
     QSqlQueryModel * affichertriprix();
     QSqlQueryModel * affichertriid();
     QSqlQueryModel * affichertrinombre();
+    QSqlQueryModel * afficherarduino();
     void generateQRCode(QString id);
     void getInventoryStats();
 

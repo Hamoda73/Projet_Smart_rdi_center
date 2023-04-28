@@ -12,7 +12,7 @@
 #include <QtCharts>
 #include <QChartView>
 #include <QPieSeries>
-
+#include <arduino.h>
 
 #include "qrcodegen.hpp"
 
@@ -27,6 +27,7 @@ class materiel : public QWidget
 public:
     explicit materiel(QWidget *parent = nullptr);
     ~materiel();
+    void readAndInsertData(QSerialPort& serialPort);
     /*void setModel(QAbstractItemModel *model); */
 
 private slots:
@@ -66,11 +67,18 @@ private slots:
 
     void on_pushButton_16_clicked();
 
+    void on_pushButton_clicked();
+
+    void on_Open_clicked();
+
+    void on_Close_clicked();
+
 private:
     Ui::materiel *ui;
     Equipement Eqmp;
     QSortFilterProxyModel *proxyModel;
     QString searchQuery;
+    Arduino A;
 
 
 

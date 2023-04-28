@@ -199,6 +199,16 @@ QSqlQueryModel * Equipement::afficher()
 
     return model;
 }
+QSqlQueryModel * Equipement::afficherarduino()
+{
+    QSqlQueryModel * model=new QSqlQueryModel();
+    model->setQuery("SELECT *  FROM HISTARD");
+    model->setHeaderData(0,Qt::Horizontal,QObject::tr("HIST"));
+    model->setHeaderData(1,Qt::Horizontal,QObject::tr("OPEN"));
+
+
+    return model;
+}
 QSqlQueryModel * Equipement::afficherasc()
 {
     QSqlQueryModel * model=new QSqlQueryModel();
@@ -375,3 +385,8 @@ void Equipement::generateQRCode(QString id) {
         // Show the dialog window (execute it)
         qrCodeDialog->exec();
 }
+
+
+
+
+

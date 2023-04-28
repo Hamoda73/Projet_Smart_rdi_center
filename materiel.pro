@@ -4,7 +4,7 @@ QT       += core gui sql
 QT += network
 QT += printsupport
 QT += sql
-
+QT       +=serialport
 QT += core gui printsupport
 
 include(qzxing/src/QZXing.pri)
@@ -24,6 +24,7 @@ CONFIG += c++17
 
 
 SOURCES += \
+    arduino.cpp \
     connection.cpp \
     emailsender.cpp \
     equipement.cpp \
@@ -33,6 +34,7 @@ SOURCES += \
 
 
 HEADERS += \
+    arduino.h \
     connection.h \
     emailsender.h \
     equipement.h \
