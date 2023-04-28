@@ -225,7 +225,7 @@ void MainWindow::showNotification(const QString &title, const QString &message)
 void MainWindow::on_update_2_clicked()
 {
     QString message = ui->notif_de->text();
-    QString dateString2 = "14/04/2023";
+    QString dateString2 = "28/04/2023";
     QDateTime date = QDateTime::fromString(message, "dd/MM/yyyy");
     QDateTime currentTime = QDateTime::fromString(dateString2, "dd/MM/yyyy");
     if (date > currentTime) {
@@ -611,13 +611,41 @@ void MainWindow::on_pushButton_9_clicked()
     QString message = ui->code_arduino->text();
     QByteArray data = message.toLocal8Bit();
     A.write_to_arduino(data);
-    //QThread::msleep(100); // add a delay here
-    update_label();
+    if(data=="0000"){
+    int id;
+    QString nom_c;
+    QString dci;
+    int dosage;
+    QString date_s;
+    QString date_d;
+    QString hdp;
+
+    medicament m(id,nom_c,dci,dosage,date_s,date_d);
+
+    //bool test=mtp.QtArduino();
+    id=ui->arduino_id->text().toInt();
+    bool test1=mtp.ModifierStatus(id);
+
+    if(test1)
+    {
+            ui->tab_arduino->setModel(mtp.afficher());
+            ui->table_meds->setModel(mtp.afficher());
+            ui->table_meds_3->setModel(mtp.afficher());
+            ui->table_meds_4->setModel(mtp.afficher());
+            ui->table_meds_5->setModel(mtp.afficher());
+            ui->table_meds_6->setModel(mtp.afficher());
+    }
+    }
+    else
+    {
+    QMessageBox::critical(nullptr, QObject::tr("Not OK"),
+                          QObject::tr("Code incorrect.\n"
+                                      "Click Cancel to exit."), QMessageBox::Cancel);
+    }
 }
 
-void MainWindow::update_label()
+/*void MainWindow::update_label()
 {
-    int i;
     QByteArray data = A.read_from_arduino();
     QString message = QString::fromUtf8(data);
     if(message=="0000")
@@ -627,4 +655,4 @@ void MainWindow::update_label()
     else {
             ui->arduino_label->setText("DOOR CLOSED");
     }
-}
+}*/

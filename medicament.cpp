@@ -30,7 +30,7 @@ bool medicament::ajouter()
 
     QString res = QString::number(id);
 
-    query.prepare("insert into medicament (id,nom_c,dci,dosage,date_s,date_d)" "values (:id, :nom_c, :dci, :dosage, :date_s, :date_d)");
+    query.prepare("insert into medicament (id,nom_c,dci,dosage,date_s,date_d,hdp)" "values (:id, :nom_c, :dci, :dosage, :date_s, :date_d)");
 
     query.bindValue(":id",res);
     query.bindValue(":nom_c",nom_c);
@@ -132,6 +132,56 @@ bool medicament::ajouterCAB(int id,QString cab)
 
         if (!cab.isEmpty())
             query.bindValue(":cab", cab);
+
+        return query.exec();
+}
+
+QSqlQueryModel* medicament::QtArduino()
+{
+        QSqlQuery query;
+        QDate DateSystem = QDate::currentDate();
+        //QString date = DateSystem.toString(Qt::ISODate);
+        QString sqlQuery = "select * from medicament where date_d > :DateSystem";
+        query.prepare(sqlQuery);
+        query.bindValue(":DateSystem", DateSystem);
+
+        if (!query.exec()) {
+            // Handle error
+            qDebug() << query.lastError().text();
+        } else {
+            // Iterate over the query result and process the data as needed
+            while (query.next()) {
+                // Get values from query result
+                int id = query.value(0).toInt();
+                QString nom_c = query.value(1).toString();
+                QString dci = query.value(2).toString();
+                int dosage = query.value(3).toInt();
+                QString date_s = query.value(4).toString();
+                QString date_d = query.value(5).toString();
+
+            }
+        }
+}
+
+bool medicament::ModifierStatus(int id)
+{
+        QSqlQuery query;
+        QString res=QString::number(id);
+        QStringList updates;
+        QTime currentTime = QTime::currentTime();
+        QString hdp =  currentTime.toString("hh:mm");
+
+        if (!hdp.isEmpty())
+            updates << "hdp=:hdp";
+
+        QString update_query = "UPDATE medicament SET " + updates.join(", ") + " WHERE id=:id";
+
+        query.prepare(update_query);
+
+        query.bindValue(":id", res);
+
+        if (!hdp.isEmpty())
+            query.bindValue(":hdp", hdp);
 
         return query.exec();
 }
