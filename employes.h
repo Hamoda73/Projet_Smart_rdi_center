@@ -9,6 +9,7 @@
 #include <QtCharts>
 #include <QChartView>
 #include <QPieSeries>
+#include "arduino.h"
 
 namespace Ui {
 class employes;
@@ -49,9 +50,16 @@ private slots:
     void sendSMS(QString account_sid, QString auth_token, QString message, QString from_number, QString to_number, QString picture_url, bool verbose);
 
 
+    void on_pb_ON_clicked();
+
+    void on_pb_OFF_clicked();
+    void update_label();
+
 private:
     Ui::employes *ui;
     Employe Emp;
+    Arduino A;
+    QByteArray data;
 
 };
 

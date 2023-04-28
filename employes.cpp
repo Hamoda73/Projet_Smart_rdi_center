@@ -1,5 +1,6 @@
 #include "employes.h"
 #include "employe.h"
+#include "qsqlerror.h"
 #include "ui_employes.h"
 #include "employe.h"
 #include <QMessageBox>
@@ -11,8 +12,11 @@
 #include <QPainter>
 #include <QPdfWriter>
 #include <QVBoxLayout>
-  #include <QPlainTextEdit>
-  #include <QAuthenticator>
+#include <QPlainTextEdit>
+#include <QAuthenticator>
+#include "QDebug"
+#include <QIODevice>
+#include <QDateTime>
 //#include<QtCharts/QPieSeries>
 //#include<QChart>
 employes::employes(QWidget *parent) :
@@ -34,6 +38,19 @@ employes::employes(QWidget *parent) :
     //qDebug() <<QSqlDatabase::drivers();
     // In the MainWindow constructor or initialization function
     connect(ui->pb_tri, SIGNAL(clicked()), this, SLOT(onButtonClicked()));
+    int ret=A.connect_arduino();
+    switch (ret) {
+    case (0):
+       qDebug()<<"arduino is available and connected to :"<<A.getarduino_port_name();
+        break;
+    case (1):
+        qDebug()<<"arduino is available but not connected to :"<<A.getarduino_port_name();
+        break;
+    case (-1):
+        qDebug()<<"arduino is not available ";
+        break;
+    }
+    QObject::connect(A.getserial(),SIGNAL(readyRead()),this,SLOT(update_label()));
 
 
 
@@ -467,7 +484,7 @@ void employes::sendSMS(QString account_sid, QString auth_token, QString message,
 void employes::on_pushButton_7_clicked()
 {
         QString account_sid = "AC5228336343591367be0e3ab3fc0b9217";
-        QString auth_token = "45c891eddaaf808894260713cf74f0d2";
+        QString auth_token = "e6277cb7a2b778834140d55c8ed0eb08";
         QString from_number = "+16203838314"; // votre numéro Twilio
         //QString to_number = "+21698755023"; // numéro de téléphone du destinataire
         QString to_number = ui->phoneNumberLineEdit->text();
@@ -482,3 +499,43 @@ void employes::on_pushButton_7_clicked()
 
 
 
+
+void employes::on_pb_ON_clicked()
+{
+    A.write_to_arduino("1");
+    QDateTime currentDateTime = QDateTime::currentDateTime();
+    QString dateString = currentDateTime.toString(Qt::ISODate);
+
+    QSqlQuery query;
+    query.prepare("INSERT INTO SYSTEME_INCENDIE (ALARM_SOUNDED) VALUES (:date)");
+    query.bindValue(":date", dateString);
+
+    if (!query.exec()) {
+        qWarning() << "Failed to save date:" << query.lastError().text();
+    }
+}
+
+
+void employes::on_pb_OFF_clicked()
+{
+        A.write_to_arduino("0");
+        QDateTime currentDateTime = QDateTime::currentDateTime();
+        QString dateString = currentDateTime.toString(Qt::ISODate);
+
+        QSqlQuery query;
+        query.prepare("INSERT INTO SYSTEME_INCENDIE (ALARM_DEAF) VALUES (:date)");
+        query.bindValue(":date", dateString);
+
+        if (!query.exec()) {
+            qWarning() << "Failed to save date:" << query.lastError().text();
+        }
+}
+
+void employes::update_label()
+{
+    data=A.read_from_arduino();
+    if(data=="1")
+        ui->label_ard->setText("System ON");
+    else
+      ui->label_ard->setText("System OFF");
+}

@@ -192,7 +192,7 @@ background:#3CB043;
        <widget class="QLabel" name="label">
         <property name="geometry">
          <rect>
-          <x>130</x>
+          <x>160</x>
           <y>40</y>
           <width>171</width>
           <height>31</height>
@@ -205,7 +205,7 @@ background:#3CB043;
 }</string>
         </property>
         <property name="text">
-         <string>Login Here</string>
+         <string>Login </string>
         </property>
        </widget>
       </widget>
@@ -213,7 +213,7 @@ background:#3CB043;
        <property name="geometry">
         <rect>
          <x>810</x>
-         <y>120</y>
+         <y>130</y>
          <width>61</width>
          <height>61</height>
         </rect>
