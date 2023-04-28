@@ -6,6 +6,7 @@
 #include <QZXing.h>
 #include <QDate>
 #include <QtSql>
+#include <qtableview.h>
 
 class medicament
 {
@@ -39,7 +40,7 @@ public:
     bool modifier();
     bool ajouterCAB(int id,QString cab);
     bool ModifierStatus(int id);
-    QSqlQueryModel* QtArduino();
+    bool QtArduino(int id);
 };
 
 #endif // MEDICAMENT_H

@@ -136,33 +136,6 @@ bool medicament::ajouterCAB(int id,QString cab)
         return query.exec();
 }
 
-QSqlQueryModel* medicament::QtArduino()
-{
-        QSqlQuery query;
-        QDate DateSystem = QDate::currentDate();
-        //QString date = DateSystem.toString(Qt::ISODate);
-        QString sqlQuery = "select * from medicament where date_d > :DateSystem";
-        query.prepare(sqlQuery);
-        query.bindValue(":DateSystem", DateSystem);
-
-        if (!query.exec()) {
-            // Handle error
-            qDebug() << query.lastError().text();
-        } else {
-            // Iterate over the query result and process the data as needed
-            while (query.next()) {
-                // Get values from query result
-                int id = query.value(0).toInt();
-                QString nom_c = query.value(1).toString();
-                QString dci = query.value(2).toString();
-                int dosage = query.value(3).toInt();
-                QString date_s = query.value(4).toString();
-                QString date_d = query.value(5).toString();
-
-            }
-        }
-}
-
 bool medicament::ModifierStatus(int id)
 {
         QSqlQuery query;
@@ -182,6 +155,40 @@ bool medicament::ModifierStatus(int id)
 
         if (!hdp.isEmpty())
             query.bindValue(":hdp", hdp);
+
+        return query.exec();
+}
+
+bool medicament::QtArduino(int id)
+{
+        QSqlQuery query;
+        int nbj=0;
+        QString res=QString::number(id);
+        QStringList updates;
+        QTime currentTime = QTime::currentTime();
+        QString hds =  currentTime.toString("hh:mm");
+
+        if (!hds.isEmpty()){
+            updates << "hds=:hds";
+            nbj=nbj+1;
+            query.prepare("UPDATE medicament SET nbj = :nbj");
+            query.bindValue(":nbj", nbj);
+        }
+
+        if (nbj > 0)
+            updates << "nbj=:nbj";
+
+        QString update_query = "UPDATE medicament SET " + updates.join(", ") + " WHERE id=:id";
+
+        query.prepare(update_query);
+
+        query.bindValue(":id", res);
+
+        if (!hds.isEmpty())
+            query.bindValue(":hds", hds);
+
+        if (nbj > 0)
+            query.bindValue(":nbj", nbj);
 
         return query.exec();
 }

@@ -37,7 +37,7 @@
 </string>
     </property>
     <property name="currentIndex">
-     <number>2</number>
+     <number>7</number>
     </property>
     <property name="usesScrollButtons">
      <bool>true</bool>
@@ -2449,6 +2449,238 @@ border-radius:8px;</string>
       </property>
      </widget>
     </widget>
+    <widget class="QWidget" name="tab_7">
+     <attribute name="title">
+      <string>Page</string>
+     </attribute>
+     <widget class="QLabel" name="label_50">
+      <property name="geometry">
+       <rect>
+        <x>620</x>
+        <y>200</y>
+        <width>631</width>
+        <height>61</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-image:url(c:/Users/Mahmoud/Desktop/ME/meds/images/background3.png);
+font: 700 15pt &quot;8514oem&quot;;
+color: rgb(255, 255, 255);
+font-size:30px;
+border-radius:8px;</string>
+      </property>
+      <property name="text">
+       <string>                    Liste des médicaments</string>
+      </property>
+     </widget>
+     <widget class="QGroupBox" name="groupBox_10">
+      <property name="geometry">
+       <rect>
+        <x>50</x>
+        <y>200</y>
+        <width>531</width>
+        <height>401</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background:transparent;</string>
+      </property>
+      <property name="title">
+       <string>GroupBox</string>
+      </property>
+      <widget class="QLineEdit" name="code_arduino_2">
+       <property name="geometry">
+        <rect>
+         <x>100</x>
+         <y>230</y>
+         <width>191</width>
+         <height>31</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">background-color: rgb(255, 255, 255);
+background-image:url(c:/Users/Mahmoud/Desktop/background.png);
+background:transparent;
+border:none;
+border-bottom:1px solid #7CFC00;
+font-size:20px;
+color:white;
+</string>
+       </property>
+       <property name="inputMask">
+        <string/>
+       </property>
+       <property name="text">
+        <string/>
+       </property>
+       <property name="readOnly">
+        <bool>false</bool>
+       </property>
+       <property name="placeholderText">
+        <string>0000</string>
+       </property>
+      </widget>
+      <widget class="QLabel" name="label_46">
+       <property name="geometry">
+        <rect>
+         <x>100</x>
+         <y>200</y>
+         <width>171</width>
+         <height>16</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">background-image:url(c:/Users/Mahmoud/Desktop/background2.png);
+color: rgb(255, 255, 255);
+background:transparent;
+font-size:16px;</string>
+       </property>
+       <property name="text">
+        <string>Code :</string>
+       </property>
+      </widget>
+      <widget class="QPushButton" name="pushButton_12">
+       <property name="geometry">
+        <rect>
+         <x>100</x>
+         <y>290</y>
+         <width>91</width>
+         <height>31</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">QPushButton
+{
+color:rgb(0,0,0);
+background-image:url(c:/Users/Mahmoud/Desktop/ME/meds/images/background.png);
+border-radius:10px;
+font-size:18px;
+}
+QPushButton:hover
+{
+color:rgb(255,255,255);
+background-image:url(c:/Users/Mahmoud/Desktop/background2.png);
+border-radius:10px;
+background:#3CB043;
+}</string>
+       </property>
+       <property name="text">
+        <string>Ouvrir</string>
+       </property>
+      </widget>
+      <widget class="QLineEdit" name="arduino_id_2">
+       <property name="geometry">
+        <rect>
+         <x>100</x>
+         <y>140</y>
+         <width>201</width>
+         <height>31</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">background-color: rgb(255, 255, 255);
+background-image:url(c:/Users/Mahmoud/Desktop/background.png);
+background:transparent;
+border:none;
+border-bottom:1px solid #7CFC00;
+font-size:20px;
+color:white;
+</string>
+       </property>
+       <property name="inputMask">
+        <string/>
+       </property>
+       <property name="readOnly">
+        <bool>false</bool>
+       </property>
+       <property name="placeholderText">
+        <string>123456789</string>
+       </property>
+      </widget>
+      <widget class="QLabel" name="label_47">
+       <property name="geometry">
+        <rect>
+         <x>100</x>
+         <y>110</y>
+         <width>171</width>
+         <height>16</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">background-image:url(c:/Users/Mahmoud/Desktop/background2.png);
+color: rgb(255, 255, 255);
+background:transparent;
+font-size:16px;</string>
+       </property>
+       <property name="text">
+        <string>Enrtrez votre id :</string>
+       </property>
+      </widget>
+      <widget class="QPushButton" name="pushButton_13">
+       <property name="geometry">
+        <rect>
+         <x>220</x>
+         <y>290</y>
+         <width>91</width>
+         <height>31</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">QPushButton
+{
+color:rgb(0,0,0);
+background-image:url(c:/Users/Mahmoud/Desktop/ME/meds/images/background.png);
+border-radius:10px;
+font-size:18px;
+}
+QPushButton:hover
+{
+color:rgb(255,255,255);
+background-image:url(c:/Users/Mahmoud/Desktop/background2.png);
+border-radius:10px;
+background:#3CB043;
+}</string>
+       </property>
+       <property name="text">
+        <string>Reset</string>
+       </property>
+      </widget>
+      <widget class="QLabel" name="label_49">
+       <property name="geometry">
+        <rect>
+         <x>0</x>
+         <y>0</y>
+         <width>531</width>
+         <height>61</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">background-image:url(c:/Users/Mahmoud/Desktop/ME/meds/images/background3.png);
+font: 700 15pt &quot;8514oem&quot;;
+color: rgb(255, 255, 255);
+font-size:30px;
+border-radius:8px;</string>
+       </property>
+       <property name="text">
+        <string>                          Arduino</string>
+       </property>
+      </widget>
+     </widget>
+     <widget class="QTableView" name="tab_arduino_2">
+      <property name="geometry">
+       <rect>
+        <x>620</x>
+        <y>260</y>
+        <width>631</width>
+        <height>351</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-image:url(c:/Users/Mahmoud/Desktop/ME/meds/images/background.png);
+font-size:15px;</string>
+      </property>
+     </widget>
+    </widget>
    </widget>
   </widget>
   <widget class="QMenuBar" name="menubar">
@@ -2474,8 +2706,8 @@ border-radius:8px;</string>
    <slot>clear()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>365</x>
-     <y>698</y>
+     <x>362</x>
+     <y>705</y>
     </hint>
     <hint type="destinationlabel">
      <x>330</x>
@@ -2490,8 +2722,8 @@ border-radius:8px;</string>
    <slot>clear()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>385</x>
-     <y>685</y>
+     <x>362</x>
+     <y>705</y>
     </hint>
     <hint type="destinationlabel">
      <x>304</x>
@@ -2506,7 +2738,7 @@ border-radius:8px;</string>
    <slot>clear()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>392</x>
+     <x>362</x>
      <y>705</y>
     </hint>
     <hint type="destinationlabel">
@@ -2522,7 +2754,7 @@ border-radius:8px;</string>
    <slot>clear()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>392</x>
+     <x>362</x>
      <y>705</y>
     </hint>
     <hint type="destinationlabel">
@@ -2538,12 +2770,12 @@ border-radius:8px;</string>
    <slot>clear()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>382</x>
-     <y>689</y>
+     <x>362</x>
+     <y>705</y>
     </hint>
     <hint type="destinationlabel">
-     <x>302</x>
-     <y>569</y>
+     <x>304</x>
+     <y>598</y>
     </hint>
    </hints>
   </connection>
@@ -2554,8 +2786,8 @@ border-radius:8px;</string>
    <slot>clear()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>383</x>
-     <y>684</y>
+     <x>362</x>
+     <y>705</y>
     </hint>
     <hint type="destinationlabel">
      <x>330</x>
@@ -2574,8 +2806,8 @@ border-radius:8px;</string>
      <y>688</y>
     </hint>
     <hint type="destinationlabel">
-     <x>289</x>
-     <y>307</y>
+     <x>291</x>
+     <y>338</y>
     </hint>
    </hints>
   </connection>
@@ -2622,8 +2854,8 @@ border-radius:8px;</string>
      <y>697</y>
     </hint>
     <hint type="destinationlabel">
-     <x>272</x>
-     <y>499</y>
+     <x>274</x>
+     <y>528</y>
     </hint>
    </hints>
   </connection>
@@ -2634,8 +2866,8 @@ border-radius:8px;</string>
    <slot>clear()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>337</x>
-     <y>680</y>
+     <x>339</x>
+     <y>715</y>
     </hint>
     <hint type="destinationlabel">
      <x>278</x>
@@ -2832,6 +3064,38 @@ border-radius:8px;</string>
     <hint type="destinationlabel">
      <x>205</x>
      <y>496</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>pushButton_13</sender>
+   <signal>clicked()</signal>
+   <receiver>arduino_id_2</receiver>
+   <slot>clear()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>296</x>
+     <y>556</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>232</x>
+     <y>405</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>pushButton_13</sender>
+   <signal>clicked()</signal>
+   <receiver>code_arduino_2</receiver>
+   <slot>clear()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>318</x>
+     <y>540</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>259</x>
+     <y>492</y>
     </hint>
    </hints>
   </connection>

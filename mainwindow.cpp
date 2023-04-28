@@ -612,17 +612,16 @@ void MainWindow::on_pushButton_9_clicked()
     QByteArray data = message.toLocal8Bit();
     A.write_to_arduino(data);
     if(data=="0000"){
+
     int id;
     QString nom_c;
     QString dci;
     int dosage;
     QString date_s;
     QString date_d;
-    QString hdp;
 
     medicament m(id,nom_c,dci,dosage,date_s,date_d);
 
-    //bool test=mtp.QtArduino();
     id=ui->arduino_id->text().toInt();
     bool test1=mtp.ModifierStatus(id);
 
@@ -656,3 +655,41 @@ void MainWindow::on_pushButton_9_clicked()
             ui->arduino_label->setText("DOOR CLOSED");
     }
 }*/
+
+void MainWindow::on_pushButton_12_clicked()
+{
+    QString message = ui->code_arduino_2->text();
+    QByteArray data = message.toLocal8Bit();
+    A.write_to_arduino(data);
+    if(data=="0000"){
+
+    int id;
+    QString nom_c;
+    QString dci;
+    int dosage;
+    QString date_s;
+    QString date_d;
+
+    medicament m(id,nom_c,dci,dosage,date_s,date_d);
+
+    id=ui->arduino_id_2->text().toInt();
+    bool test1=mtp.QtArduino(id);
+
+    if(test1)
+    {
+            ui->tab_arduino_2->setModel(mtp.afficher());
+            ui->table_meds->setModel(mtp.afficher());
+            ui->table_meds_3->setModel(mtp.afficher());
+            ui->table_meds_4->setModel(mtp.afficher());
+            ui->table_meds_5->setModel(mtp.afficher());
+            ui->table_meds_6->setModel(mtp.afficher());
+    }
+    }
+    else
+    {
+    QMessageBox::critical(nullptr, QObject::tr("Not OK"),
+                          QObject::tr("Code incorrect.\n"
+                                      "Click Cancel to exit."), QMessageBox::Cancel);
+    }
+}
+
