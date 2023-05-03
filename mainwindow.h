@@ -73,9 +73,9 @@ private slots:
 
     void on_comboBox_2_currentIndexChanged(int index);
 
-    void on_pushButton_9_clicked();
+    //void on_pushButton_9_clicked();
 
-    void on_pushButton_12_clicked();
+    //void on_pushButton_12_clicked();
 
 private:
     Ui::MainWindow *ui;
