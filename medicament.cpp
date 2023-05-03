@@ -30,7 +30,7 @@ bool medicament::ajouter()
 
     QString res = QString::number(id);
 
-    query.prepare("insert into medicament (id,nom_c,dci,dosage,date_s,date_d,hdp)" "values (:id, :nom_c, :dci, :dosage, :date_s, :date_d)");
+    query.prepare("insert into medicament (id,nom_c,dci,dosage,date_s,date_d)" "values (:id, :nom_c, :dci, :dosage, :date_s, :date_d)");
 
     query.bindValue(":id",res);
     query.bindValue(":nom_c",nom_c);

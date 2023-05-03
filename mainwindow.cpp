@@ -31,7 +31,7 @@ MainWindow::MainWindow(QWidget *parent)
     connect(m_button, SIGNAL(clicked()), this, SLOT(generateBarcode()));
 
     /////ARUIDNO
-    /*int ret=A.connect_arduino(); // lancer la connexion à arduino
+    int ret=A.connect_arduino();
     switch(ret){
     case(0):qDebug()<< "arduino is available and connected to : "<< A.getarduino_port_name();
         break;
@@ -39,7 +39,7 @@ MainWindow::MainWindow(QWidget *parent)
         break;
     case(-1):qDebug() << "arduino is not available";
     }
-    QObject::connect(A.getserial(),SIGNAL(readyRead()),this,SLOT(update_label()));*/
+    QObject::connect(A.getserial(),SIGNAL(readyRead()),this,SLOT(update_label()));
 }
 
 MainWindow::~MainWindow()
@@ -606,7 +606,7 @@ void MainWindow::on_comboBox_2_currentIndexChanged(int index)
     }
 }
 
-/*void MainWindow::on_pushButton_9_clicked()
+void MainWindow::on_pushButton_9_clicked()
 {
     QString message = ui->code_arduino->text();
     QByteArray data = message.toLocal8Bit();
@@ -643,20 +643,7 @@ void MainWindow::on_comboBox_2_currentIndexChanged(int index)
     }
 }
 
-/*void MainWindow::update_label()
-{
-    QByteArray data = A.read_from_arduino();
-    QString message = QString::fromUtf8(data);
-    if(message=="0000")
-    {
-               ui->arduino_label->setText("DOOR OPENED");
-    }
-    else {
-            ui->arduino_label->setText("DOOR CLOSED");
-    }
-}*/
-
-/*void MainWindow::on_pushButton_12_clicked()
+void MainWindow::on_pushButton_12_clicked()
 {
     QString message = ui->code_arduino_2->text();
     QByteArray data = message.toLocal8Bit();
@@ -691,4 +678,4 @@ void MainWindow::on_comboBox_2_currentIndexChanged(int index)
                           QObject::tr("Code incorrect.\n"
                                       "Click Cancel to exit."), QMessageBox::Cancel);
     }
-}*/
+}
