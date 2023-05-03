@@ -9,6 +9,9 @@ MainWindow::MainWindow(QWidget *parent)
     ui->setupUi(this);
     ui->le_id->setValidator (new QIntValidator(0, 99999999, this));
     ui->le_idg->setValidator (new QIntValidator(0, 99999999, this));
+    ui->le_idg_2->setValidator (new QIntValidator(0, 99999999, this));
+    ui->arduino_id->setValidator (new QIntValidator(0, 99999999, this));
+    ui->arduino_id_2->setValidator (new QIntValidator(0, 99999999, this));
     ui->le_code->setValidator (new QIntValidator(0, 99999999, this));
     ui->le_dosage->setValidator (new QIntValidator(0, 99999999, this));
     ui->line_id->setValidator (new QIntValidator(0, 99999999, this));
