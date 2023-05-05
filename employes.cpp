@@ -484,7 +484,7 @@ void employes::sendSMS(QString account_sid, QString auth_token, QString message,
 void employes::on_pushButton_7_clicked()
 {
         QString account_sid = "AC5228336343591367be0e3ab3fc0b9217";
-        QString auth_token = "e6277cb7a2b778834140d55c8ed0eb08";
+        QString auth_token = "3401176baebfc5ae2fe15b85170fc2c9";
         QString from_number = "+16203838314"; // votre numéro Twilio
         //QString to_number = "+21698755023"; // numéro de téléphone du destinataire
         QString to_number = ui->phoneNumberLineEdit->text();
@@ -539,3 +539,25 @@ void employes::update_label()
     else
       ui->label_ard->setText("System OFF");
 }
+
+void employes::on_pb_OPD_clicked()
+{
+    A.write_to_arduino("2");
+    QDateTime currentDateTime = QDateTime::currentDateTime();
+    QString dateString = currentDateTime.toString(Qt::ISODate);
+
+    QSqlQuery query;
+    query.prepare("INSERT INTO SYSTEME_INCENDIE (DOOR_OPENED) VALUES (:date)");
+    query.bindValue(":date", dateString);
+
+    if (!query.exec()) {
+        qWarning() << "Failed to save date:" << query.lastError().text();
+    }
+}
+
+
+void employes::on_pb_CLD_clicked()
+{
+    A.write_to_arduino("3");
+}
+

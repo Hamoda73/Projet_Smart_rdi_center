@@ -1435,7 +1435,7 @@ color:white</string>
         <x>290</x>
         <y>170</y>
         <width>341</width>
-        <height>171</height>
+        <height>251</height>
        </rect>
       </property>
       <property name="styleSheet">
@@ -1484,7 +1484,7 @@ background:#3CB043;
 }</string>
        </property>
        <property name="text">
-        <string>ON</string>
+        <string>Alarme ON</string>
        </property>
       </widget>
       <widget class="QPushButton" name="pb_OFF">
@@ -1525,7 +1525,7 @@ background:#3CB043;
 }</string>
        </property>
        <property name="text">
-        <string>OFF</string>
+        <string>Alarme OFF</string>
        </property>
       </widget>
       <widget class="QLabel" name="label_ard">
@@ -1548,6 +1548,88 @@ background:#3CB043;
        </property>
        <property name="wordWrap">
         <bool>true</bool>
+       </property>
+      </widget>
+      <widget class="QPushButton" name="pb_OPD">
+       <property name="geometry">
+        <rect>
+         <x>50</x>
+         <y>190</y>
+         <width>81</width>
+         <height>24</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">*{
+ font-family:century gothic;
+   font-size:14px;
+}
+
+QFrame
+{
+ 	 
+}
+QPushButton
+{
+
+	
+	background-image: url(:/img/white.jpg);
+}
+QPushButton
+{
+ border-radius:8px;
+}
+QPushButton:hover
+{
+color:rgb(255,255,255);
+ 
+border-radius:10px;
+background:#3CB043;
+}</string>
+       </property>
+       <property name="text">
+        <string> Open Door</string>
+       </property>
+      </widget>
+      <widget class="QPushButton" name="pb_CLD">
+       <property name="geometry">
+        <rect>
+         <x>220</x>
+         <y>190</y>
+         <width>75</width>
+         <height>24</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">*{
+ font-family:century gothic;
+   font-size:14px;
+}
+
+QFrame
+{
+ 	 
+}
+QPushButton
+{
+
+	
+	background-image: url(:/img/white.jpg);
+}
+QPushButton
+{
+ border-radius:8px;
+}
+QPushButton:hover
+{
+color:rgb(255,255,255);
+ 
+border-radius:10px;
+background:#3CB043;
+}</string>
+       </property>
+       <property name="text">
+        <string>Close Door</string>
        </property>
       </widget>
      </widget>

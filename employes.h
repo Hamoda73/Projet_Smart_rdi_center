@@ -55,6 +55,10 @@ private slots:
     void on_pb_OFF_clicked();
     void update_label();
 
+    void on_pb_OPD_clicked();
+
+    void on_pb_CLD_clicked();
+
 private:
     Ui::employes *ui;
     Employe Emp;
