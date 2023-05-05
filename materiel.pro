@@ -2,6 +2,7 @@
 QT += core gui charts
 QT       += core gui sql
 QT += network
+QT += core network
 QT += printsupport
 QT += sql
 QT       +=serialport
@@ -15,6 +16,13 @@ LIBS += -lssl -lcrypto
 
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 
+
+# QXlsx code for Application Qt project
+QXLSX_PARENTPATH=./         # current QXlsx path is . (. means curret directory)
+QXLSX_HEADERPATH=./header/  # current QXlsx header path is ./header/
+QXLSX_SOURCEPATH=./source/  # current QXlsx source path is ./source/
+include(./QXlsx.pri)
+
 CONFIG += c++17
 
 
@@ -25,21 +33,31 @@ CONFIG += c++17
 
 SOURCES += \
     arduino.cpp \
+    chercheur.cpp \
     connection.cpp \
     emailsender.cpp \
+    employe.cpp \
     equipement.cpp \
     main.cpp \
     mainwindow.cpp \
-    materiel.cpp
+    materiel.cpp \
+    medicament.cpp \
+    recherche.cpp \
+    stage.cpp
 
 
 HEADERS += \
     arduino.h \
+    chercheur.h \
     connection.h \
     emailsender.h \
+    employe.h \
     equipement.h \
     mainwindow.h \
-    materiel.h
+    materiel.h \
+    medicament.h \
+    recherche.h \
+    stage.h
 
 
 
@@ -64,6 +82,7 @@ RESOURCES += \
     rsrc.qrc
 
 DISTFILES += \
+    334918672_211873658186275_2354031598588845974_n.jpg \
     last/zxing-master/.editorconfig \
     last/zxing-master/.gitattributes \
     last/zxing-master/.github/CONTRIBUTING.md \

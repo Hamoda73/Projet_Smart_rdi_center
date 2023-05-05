@@ -1,11 +1,16 @@
 #include "materiel.h"
-#include "MainWindow.h"
 #include "equipement.h"
 #include "connection.h"
 #include <QMessageBox>
 #include <QApplication>
 
 #include "emailsender.h"
+
+
+#include "employe.h"
+#include <QApplication>
+#include <QMessageBox>
+#include "mainwindow.h"
 
 int main(int argc, char *argv[])
 {
@@ -14,8 +19,8 @@ int main(int argc, char *argv[])
 
     Connection c;
     bool test=c.createconnect();
-    materiel w;
 
+    MainWindow w;
     if(test)
     {w.show();
         QMessageBox::information(nullptr, QObject::tr("database is open"),
